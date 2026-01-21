@@ -1,0 +1,36 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Statistical Methods for Quantitative Data Analysis"
+  search: true
+  repo-url: https://github.com/analystnyamu/EnlighteningMath/
+  repo-branch: main
+  repo-actions: [issue]
+  downloads: [epub]  # Removed pdf from downloads
+  sharing: [twitter, facebook]
+  author: "Martin N. Wanjiru"
+  date: "01-Jan-2023"
+  description: "This book provides a structured, practical introduction to Python for Data Analysis."
+  
+  chapters:
+  
+    - intro.qmd              
+    - Day_1.qmd   # Day 1: Introduction to Python for Data Analysis
+    
+
+format:
+  html:
+    css: styles.css
+    theme:
+      - cosmo
+      - EM.scss
+    code-link: true
+    toc: true
+    colorlinks: true
+    author-meta: "Martin N Wanjiru"
+    # Avoiding a single-page format                  # Ensure pagination is enabled
+    number-chapters: true
+    next-chapter: true              # Include next chapter navigation
+    previous-chapter: true          # Include previous chapter navigation

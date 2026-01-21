@@ -1,0 +1,172 @@
+---
+title: "Python for Data Analysis"
+subtitle: "Lecture Notes & Course Handbook"
+author: "Martin Nyamu Wanjiru"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+  pdf:
+    toc: true
+    number-sections: true
+execute:
+  echo: false
+---
+
+## Course Overview
+
+This course provides a structured, practical introduction to **Python for Data Analysis**, covering programming fundamentals, data manipulation, visualization, statistics, and applied projects.
+
+The notes are organized into **daily lectures**, designed for **online live sessions**, with hands-on examples and real-world datasets.
+
+---
+
+## Python Fundamentals & Data Handling
+
+### Day 1: Introduction to Python for Data Analysis
+- Course onboarding and outline  
+- Python features  
+- Python ecosystem (Anaconda, Jupyter, libraries)  
+- Running basic Python commands  
+
+### Day 2: Python Data Types & Variables
+- Numeric data types (`int`, `float`)  
+- Strings and booleans  
+- Variable assignment  
+- Basic operations  
+
+### Day 3: Control Flow & Logical Operations
+- Conditional statements (`if`, `elif`, `else`)  
+- Loops (`for`, `while`)  
+- Logical operators  
+
+### Day 4: Functions & Debugging
+- Defining functions  
+- Function arguments and return values  
+- Basic debugging and error handling  
+
+### Day 5: Core Data Structures
+- Lists, tuples, dictionaries, and sets  
+- Nested structures  
+- Choosing the right data structure  
+
+### Day 6: Working with Files & Simple Data Tasks
+- Reading and writing CSV files  
+- Working with Excel files  
+- File paths and directories  
+- Basic data exploration  
+
+### Day 7: Introduction to NumPy
+- NumPy arrays vs Python lists  
+- Vectorized operations  
+- Basic statistical functions  
+
+### Day 8: Introduction to Pandas & DataFrames
+- Pandas Series and DataFrames  
+- Indexing, selection, and inspection  
+- Loading real-world datasets  
+
+---
+
+## Data Manipulation & Analysis
+
+### Day 9: Data Cleaning Basics
+- Renaming columns  
+- Converting data types  
+- Removing duplicates  
+- Handling missing values  
+- Subsetting data  
+
+### Day 10: Advanced Data Cleaning & Transformation
+- Logical filling of missing values  
+- Applying functions to data  
+- Feature creation  
+
+### Day 11: Filtering, Sorting & Conditional Selection
+- Boolean indexing  
+- Sorting data  
+- Conditional extraction  
+
+### Day 12: Grouping, Aggregation & Summarization
+- GroupBy operations  
+- Aggregation functions  
+- Pivot tables and reshaping  
+
+### Day 13: Merging & Joining Datasets
+- Inner, left, right, and outer joins  
+- Handling key conflicts  
+
+### Day 14: Exploratory Data Analysis (EDA) Basics
+- Summary statistics  
+- Distribution analysis  
+- Outlier detection  
+
+### Day 15: Time Series Analysis
+- Resampling time data  
+- Rolling averages  
+- Seasonality and trends  
+- Year-over-Year (YoY) metrics  
+
+### Day 16: Advanced EDA & Case Study
+- End-to-end dataset cleaning  
+- Feature transformations  
+- Preparing data for visualization  
+
+---
+
+## Data Visualization, Statistics & Applied Projects
+
+### Day 17: Principles of Data Visualization
+- Choosing the right chart  
+- Avoiding misleading visuals  
+- Best practices  
+
+### Day 18: Visualization with Matplotlib
+- Line, bar, and scatter plots  
+- Customization and saving plots  
+
+### Day 19: Statistical Visualization with Seaborn
+- Distribution plots  
+- Boxplots and violin plots  
+- Heatmaps and correlation matrices  
+
+### Day 20: Interpreting & Communicating Insights
+- Data storytelling  
+- Presenting findings effectively  
+- Avoiding common mistakes  
+
+### Day 21: Probability & Descriptive Statistics
+- Mean, median, mode  
+- Variance and standard deviation  
+- Percentiles and quartiles  
+
+### Day 22: Hypothesis Testing & Correlation
+- Null and alternative hypotheses  
+- t-tests and chi-square tests  
+- Pearson and Spearman correlation  
+
+### Day 23: Simple Linear Regression & Analysis
+- Linear regression basics  
+- Visualizing relationships  
+- Interpretation of coefficients  
+
+### Day 24: Capstone Project & Presentations
+- End-to-end data analysis project  
+- Insights, visualization, and reporting  
+- Presentations and feedback  
+
+---
+
+## How to Use These Notes
+
+- Each **Day** corresponds to a separate lecture file (`day01.qmd`, `day02.qmd`, etc.)
+- Code examples are executable
+- Notes can be rendered as:
+  - HTML course website
+  - PDF lecture handbook
+  - Slides (RevealJS)
+
+---
+
+## End of Table of Contents

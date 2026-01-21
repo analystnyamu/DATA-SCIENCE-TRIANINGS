@@ -1,0 +1,409 @@
+---
+title: "Day 1: Introduction to Python for Data Analysis"
+editor: visual
+---
+
+## 1. Course Onboarding and Outline
+
+**Welcome to Python for Data Analysis!**
+
+**Course Philosophy**: Learn by doing. We'll focus on practical skills you can immediately apply to real-world data problems.
+
+::: callout-tip
+## Learning Objectives
+
+By the end of this course, you will be able to:
+
+-   **Write and understand basic Python programs**
+-   **Load, clean, analyze, and visualize data**
+-   **Apply statistical concepts using Python**
+-   **Communicate data-driven insights clearly**
+:::
+
+### 1.1 Course Purpose
+
+This course is designed to introduce learners to **Python as a practical tool for data analysis**.
+
+Python is widely used in **research, statistics, finance, health sciences, social sciences, and business analytics**, making it a valuable skill across disciplines.
+
+------------------------------------------------------------------------
+
+### 1.2 Target Audience
+
+This course is suitable for:
+
+-   Beginners with little or no programming experience
+-   Students and researchers working with data
+-   Professionals transitioning from Excel, SPSS, R, or SAS to Python
+
+No prior programming knowledge is required.
+
+------------------------------------------------------------------------
+
+### 1.3 Course Structure
+
+The course is organized into three major sections:
+
+1.  **Python Fundamentals & Data Handling**: Covers Python basics, data types, control flow, functions, and core data structures.
+2.  **Data Manipulation & Analysis**: Focuses on data cleaning, transformation, exploratory data analysis, and time series analysis using Pandas.
+3.  **Data Visualization, Statistics & Applied Projects**: Introduces visualization principles, statistical analysis, regression, and an end-to-end capstone project.
+
+Each session includes:
+
+-   Concept explanation
+-   Live coding demonstrations
+-   Hands-on exercises
+-   Question and answer sessions
+-   Assessment of Understanding
+
+**Assessment Structure**
+
+-   Weekly Exercises: 40%
+-   Mid-course Project: 25%
+-   Final Capstone Project: 35%
+
+------------------------------------------------------------------------
+
+## 2. Introduction to Python for Data Analysis
+
+### 2.1 What is Python?
+
+Python is a **high-level, interpreted programming language** known for its simplicity and readability. It allows users to focus on solving problems rather than complex syntax.
+
+Python is used in:
+
+-   Data analysis and statistics
+-   Machine learning and artificial intelligence
+-   Scientific computing
+-   Web development
+-   Automation and scripting
+
+------------------------------------------------------------------------
+
+### 2.2 Why Use Python for Data Analysis?
+
+Python is especially suitable for data analysis because:
+
+-   It handles large datasets efficiently
+-   It has powerful libraries for data manipulation and visualization
+-   It integrates well with databases, spreadsheets, and web data
+-   It supports reproducible research and analysis
+
+Python enables analysts to move from **raw data to insights** within a single environment.
+
+# Python vs. Other Data Analysis Tools
+
+The table below compares **Python** with other commonly used data analysis tools across key features.
+
+| Feature | Python | Excel | R | SQL |
+|----|----|----|----|----|
+| **Data Size** | Large datasets | Limited rows | Large datasets | Very large |
+| **Learning Curve** | Moderate | Easy | Steep | Moderate |
+| **Visualization** | Excellent | Basic | Excellent | Limited |
+| **Automation** | Full | Limited | Full | Limited |
+| **Statistical Analysis** | Good | Basic | Excellent | Basic |
+
+------------------------------------------------------------------------
+
+## 3. Python Features
+
+### 3.1 Key Features of Python
+
+-   **Simple and readable syntax**: Python code is easy to read and understand, making it ideal for beginners.
+-   **Interpreted language**: Code is executed line by line, which helps with testing and debugging.
+-   **Open-source and free**: Python can be freely downloaded and used without licensing restrictions.
+-   **Cross-platform compatibility**: Python runs on Windows, macOS, and Linux.
+-   **Extensive standard library**: Python comes with many built-in modules for common tasks.
+
+------------------------------------------------------------------------
+
+### 3.2 Python in Data Science
+
+Python supports data science through a rich ecosystem of libraries, including:
+
+-   **NumPy** – numerical and array-based computing
+-   **Pandas** – data manipulation and analysis
+-   **Matplotlib** – data visualization
+-   **Seaborn** – statistical visualization
+-   **SciPy** – scientific and statistical computing
+
+These tools make Python one of the most popular languages in data analysis and research.
+
+------------------------------------------------------------------------
+
+## 4. Python Ecosystem
+
+### 4.1 Anaconda Distribution
+
+**Anaconda** is a Python distribution specifically designed for data science and analytics.A complete package manager and environment manager for Python data science.
+
+It includes:
+
+-   Python interpreter
+-   Popular data science libraries
+-   Package management tools (`conda`)
+-   Development environments such as Jupyter Notebook
+
+**Advantages of Anaconda**
+
+-   **Simplifies installation and setup**
+-   **Pre-installed Libraries**: 250+ data science packages
+-   **Cross-Platform**: Works on Windows, Mac, Linux
+-   **Avoids dependency conflicts**: Isolate projects with different package versions. Dependency conflicts occur when different software packages require different versions of the same underlying library or package.
+
+```{python}
+# Package A requires NumPy version 1.20
+# Package B requires NumPy version 1.24
+# Both can't coexist in the same environment!
+
+# This causes errors like:
+# ImportError: incompatible library version
+# AttributeError: module 'numpy' has no attribute 'function'
+```
+
+-   **Ideal for beginners and academic use**
+-   **Conda Package Manager**: Better than pip for scientific packages
+
+## Conda vs PIP: Key Differences
+
+| \# | Difference | Conda | PIP |
+|----|----|----|----|
+| 1 | What it manages | Python packages, system libraries, and other languages | Python packages only |
+| 2 | Compilation | Uses pre-compiled binaries (no compilation required) | May require compilation from source |
+| 3 | Environment isolation | Built-in environment management with different Python versions | Requires `venv` or `virtualenv` |
+| 4 | Dependency resolution | Resolves all dependencies together, reducing conflicts | Installs packages sequentially; conflicts may occur |
+| 5 | Non-Python software | Can install R, C/C++ libraries, and compilers | Cannot install non-Python software |
+| 6 | Package sources | Multiple channels (e.g., `defaults`, `conda-forge`) | Uses PyPI repository only |
+| 7 | Use case focus | Data science and scientific computing | General Python development |
+
+**Best Practice for Data Analysis:**
+
+**Start with Conda for core data science stack**
+
+```         
+conda create --name analysis python=3.10 pandas numpy matplotlib
+```
+
+This command creates a new isolated Python environment using conda and installs specific packages into it.
+
+**Use pip only for packages not in conda**
+
+```         
+conda activate analysis  # After creation, activate it:
+pip install niche-package
+```
+
+------------------------------------------------------------------------
+
+## Installing Anaconda for Python Data Analysis
+
+### Step 1: Download the Installer
+
+1.  Visit the official **Anaconda Downloads** page:
+
+    👉 https://www.anaconda.com/download
+
+2.  **Choose the correct installer**:
+
+    -   Select the **latest Python 3.x** version
+    -   Match your **operating system** (Windows, macOS, or Linux)
+    -   Choose **64-bit** (recommended for modern systems)
+
+3.  **Registration notice**:
+
+    -   You may be prompted to register with an email address\
+    -   This step is **optional** and can usually be skipped
+
+4.  **Consider the installer size**:
+
+    -   **Anaconda** (\~3 GB): Includes hundreds of pre-installed data science packages\
+    -   **Miniconda** (\~400 MB): A lightweight alternative that installs only essential components
+        -   Recommended if you prefer full control over installed packages
+
+### Step 2: Run the Installer
+
+1.  Locate the downloaded installer file.
+
+2.  Double-click to launch it.
+
+3.  Follow the on-screen instructions:
+
+    -   Accept the license agreement
+    -   Use default settings unless you have specific requirements
+    -   For beginners, **do not change advanced options**
+
+*The installation steps are similar across Windows, macOS, and Linux.*
+
+### Step 3: Verify the Installation
+
+**Launch a Terminal**
+
+-   **Windows**:
+
+    Open **Anaconda Prompt** from the Start Menu
+
+-   **macOS / Linux**:
+
+    Open the system **Terminal**
+
+**Run the verification command**
+
+``` bash
+conda --version
+```
+
+### Step 4: Choose Your Interface (Next Steps)
+
+After installing Anaconda, you can interact with it using **two main interfaces**, depending on your experience level and workflow preferences.
+
+## 🖥️ Graphical User Interface (GUI)
+
+You can launch **Anaconda Navigator** from:
+
+-   **Start Menu** (Windows)
+-   **Applications** folder (macOS)
+
+**Why use the GUI?**
+
+-   Ideal for **beginners**
+-   No command-line knowledge required
+-   Provides an intuitive **point-and-click** experience
+
+**What you can manage with the GUI:**
+
+-   Packages
+
+-   Conda environments
+
+-   Applications such as:
+
+    -   **Jupyter Notebook**
+    -   **JupyterLab**
+    -   **Spyder**
+
+### Command Line Interface (CLI)
+
+You can work from the command line using:
+
+-   **Anaconda Prompt** (Windows)
+-   **Terminal** (macOS/Linux)
+
+**Why use the CLI?**
+
+-   More **powerful and flexible**
+-   Faster for experienced users
+-   Industry-standard approach
+
+### Recommendation
+
+-   Start with the **GUI** if you are new to Python
+-   Gradually transition to the **CLI** for better control and efficiency
+
+------------------------------------------------------------------------
+
+### 4.2 Jupyter Notebook
+
+Jupyter Notebook is an **interactive computing environment** that allows users to:
+
+-   Write Python code in cells
+-   Execute code and view results immediately
+-   Combine code, text, equations, and visualizations
+-   Document analysis step by step
+
+Jupyter is widely used for:
+
+-   Teaching and learning
+-   Data exploration
+-   Research documentation
+-   Reproducible analysis
+
+------------------------------------------------------------------------
+
+### 4.3 Python Libraries
+
+A **library** is a collection of pre-written code that performs specific tasks.
+
+Common libraries used in this course:
+
+-   `math` – mathematical operations
+-   `numpy` – numerical computing
+-   `pandas` – working with tables and datasets
+-   `matplotlib` – plotting and visualization
+
+Libraries allow users to perform complex tasks with minimal code.
+
+------------------------------------------------------------------------
+
+## 5. Running Basic Python Commands
+
+### 5.1 Starting Python
+
+Python can be run in several ways:
+
+-   Jupyter Notebook (recommended for this course)
+-   Anaconda Prompt or Terminal
+-   Python script files (`.py`)
+-   Spyder
+
+In this course, all demonstrations and exercises will be done using **Jupyter Notebook**.
+
+------------------------------------------------------------------------
+
+### 5.2 Your First Python Command
+
+```{python}
+print("Hello, Python for Data Analysis!")
+```
+
+### 5.3 Python as a Calculator
+
+```{python}
+2 + 3
+
+10 - 4
+
+5 * 6
+
+20 / 4
+
+```
+
+### 5.4 Variables and Assignment
+
+Variables are used to store data in memory.
+
+```{python}
+x = 10
+y = 5
+x + y
+
+```
+
+-   = is the assignment operator
+-   Variable names should be descriptive and meaningful
+
+### 5.5 Checking Data Types
+
+Python automatically determines the type of data stored in a variable.
+
+```{python}
+type(x)
+
+```
+
+**Common data types:**
+
+-   **int** – whole numbers
+-   **float** – decimal numbers
+-   **str** – text
+-   **bool** – True or False values
+
+::: callout-tip
+## Practice Exercise
+
+-   Open Jupyter Notebook
+-   Print a message of your choice
+-   Perform at least three arithmetic operations
+-   Create two variables and calculate their sum
+-   Check the data type of one variable
+:::

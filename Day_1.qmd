@@ -96,7 +96,7 @@ Python enables analysts to move from **raw data to insights** within a single en
 The table below compares **Python** with other commonly used data analysis tools across key features.
 
 | Feature | Python | Excel | R | SQL |
-|----|----|----|----|----|
+|---------------|---------------|---------------|---------------|---------------|
 | **Data Size** | Large datasets | Limited rows | Large datasets | Very large |
 | **Learning Curve** | Moderate | Easy | Steep | Moderate |
 | **Visualization** | Excellent | Basic | Excellent | Limited |
@@ -167,7 +167,7 @@ It includes:
 ## Conda vs PIP: Key Differences
 
 | \# | Difference | Conda | PIP |
-|----|----|----|----|
+|------------------|------------------|------------------|------------------|
 | 1 | What it manages | Python packages, system libraries, and other languages | Python packages only |
 | 2 | Compilation | Uses pre-compiled binaries (no compilation required) | May require compilation from source |
 | 3 | Environment isolation | Built-in environment management with different Python versions | Requires `venv` or `virtualenv` |

@@ -3,9 +3,9 @@ title: "Day 2: Python Data Types & Variables"
 editor: visual
 ---
 
-## 1. Introduction
+## Introduction
 
-In this session, we focus on **how Python stores and works with data**.  
+In this session, we focus on **how Python stores and works with data**.\
 Understanding data types and variables is essential because **all data analysis tasks depend on correctly handling data values**.
 
 ::: callout-tip
@@ -13,16 +13,16 @@ Understanding data types and variables is essential because **all data analysis 
 
 By the end of this lesson, learners will be able to:
 
-- Identify common Python data types
-- Assign values to variables
-- Perform basic operations on different data types
+-   Identify common Python data types
+-   Assign values to variables
+-   Perform basic operations on different data types
 :::
 
 ------------------------------------------------------------------------
 
-## 2. Variables and Assignment in Python
+## Variables and Assignment in Python
 
-### 2.1 What is a Variable?
+### What is a Variable?
 
 A **variable** is a name that refers to a value stored in memory.
 
@@ -32,18 +32,18 @@ y = 5
 x + y
 ```
 
-- x is the variable name
-- = is the assignment operator
-- 10 is the value stored in the variable
+-   x is the variable name
+-   = is the assignment operator
+-   10 is the value stored in the variable
 
 Variables allow us to store, reuse, and manipulate data. Variable names should be descriptive and meaningful
 
-### 2.2 Rules for Naming Variables
+### Rules for Naming Variables
 
-- Must start with a letter or underscore (_)
-- Cannot start with a number
-- Cannot contain spaces
-- Should be descriptive and meaningful
+-   Must start with a letter or underscore (\_)
+-   Cannot start with a number
+-   Cannot contain spaces
+-   Should be descriptive and meaningful
 
 **Valid variable names**
 
@@ -59,30 +59,58 @@ total_sales = 5000
 total sales = 5000   # contains space
 ```
 
-
-
-## 3. Checking Data Types
+## Checking Data Types
 
 Python automatically determines the type of data stored in a variable.
 
-### 3.1 Common data types:**
+### Common data types:\*\*
 
 -   **int** – whole numbers
 -   **float** – decimal numbers
 -   **str** – text
 -   **bool** – True or False values
+- **List (list)** – ordered, changeable
+
+**1. Numeric data types**
 
 ```{python}
-type(x)
+# - **Integer (int)** - Whole numbers (no decimals):
+age = 25
+participants = 120
+
+# Check type
+type(age)
+```
+
+**2. String assignment (text data)**
+
+```{python}
+
+course = "Statistics and Data Analysis"
+message = "Welcome to Python!"
+
+# Check Type
+type(course)
 
 ```
 
+**3. Boolean assignment (True / False)**
 
-## 4. Numeric Data Types
+```{python}
+is_registered = True
+has_paid = False
+passed_exam = True
+
+# Check Type
+type(is_registered)
+```
+
+
+## Numeric Data Types
 
 Python supports several numeric types, but the most commonly used are integers and floats.
 
-### 4.1 Integers (int)
+### Integers (int)
 
 Integers are whole numbers without decimal points.
 
@@ -91,14 +119,13 @@ a = 10
 b = -3
 ```
 
-
 Examples of integers:
 
-- Population counts
-- Number of observations
-- Age in completed years
+-   Population counts
+-   Number of observations
+-   Age in completed years
 
-### 3.2 Floating-Point Numbers (float)
+### Floating-Point Numbers (float)
 
 Floats are numbers with decimal points.
 
@@ -107,9 +134,24 @@ height = 1.75
 temperature = 36.6
 ```
 
-
 Examples of floats:
 
-- Measurements
-- Averages
-- Percentages
+-   Measurements
+-   Averages
+-   Percentages
+
+## String Data Type (str)
+
+A string is a sequence of characters enclosed in:
+
+- Single quotes ' '
+- Double quotes " "
+- Triple quotes ''' ''' or """ """ (multi-line strings)
+
+**Key Points**
+
+- Strings are immutable (cannot be changed)
+- Supports indexing and slicing
+- Used to store text
+
+Examples

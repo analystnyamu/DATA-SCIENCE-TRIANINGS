@@ -154,4 +154,44 @@ A string is a sequence of characters enclosed in:
 - Supports indexing and slicing
 - Used to store text
 
-Examples
+**Examples**
+
+```{python}
+name = "Python"
+language = 'Programming'
+
+print(name)
+print(type(name))
+
+```
+
+## List Data Type (list)
+
+A list is an ordered, mutable collection of items.
+
+**Key Points**
+
+- Defined using square brackets []
+- Can store multiple data types
+- Allows duplicate values
+- Mutable (elements can be modified)
+
+**Examples**
+
+```{python}
+numbers = [10, 20, 30, 40]
+print(numbers)
+print(type(numbers))
+
+mixed = [1, "Python", 3.5, True]
+print(mixed)
+
+```
+
+**Modifying a List**
+
+```{r}
+numbers[1] = 25
+print(numbers)
+
+```

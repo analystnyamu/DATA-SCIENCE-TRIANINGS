@@ -78,11 +78,11 @@ type(x)
 ```
 
 
-## 4. Numeric Data Types
+## 3.2 Numeric Data Types
 
 Python supports several numeric types, but the most commonly used are integers and floats.
 
-### 4.1 Integers (int)
+### 3.2.1 Integers (int)
 
 Integers are whole numbers without decimal points.
 
@@ -91,14 +91,13 @@ a = 10
 b = -3
 ```
 
-
-Examples of integers:
+**Examples of integers:**
 
 - Population counts
 - Number of observations
 - Age in completed years
 
-### 3.2 Floating-Point Numbers (float)
+### 3.2.2 Floating-Point Numbers (float)
 
 Floats are numbers with decimal points.
 
@@ -107,9 +106,29 @@ height = 1.75
 temperature = 36.6
 ```
 
-
-Examples of floats:
+**Examples of floats:**
 
 - Measurements
 - Averages
 - Percentages
+
+### 3.2.3 Checking Numeric Types
+
+```{python}
+type(a)
+type(height)
+```
+
+## 4. Strings (str)
+
+### 4.1 What is a String?
+
+A string is a sequence of characters used to represent text.
+
+```{r}
+name = "Martin"
+country = 'Kenya'
+```
+
+Strings can be enclosed in single or double quotation marks.
+

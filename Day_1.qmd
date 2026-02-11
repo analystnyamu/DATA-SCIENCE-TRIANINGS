@@ -96,7 +96,7 @@ Python enables analysts to move from **raw data to insights** within a single en
 The table below compares **Python** with other commonly used data analysis tools across key features.
 
 | Feature | Python | Excel | R | SQL |
-|----|----|----|----|----|
+|---------------|--------------|--------------|--------------|--------------|
 | **Data Size** | Large datasets | Limited rows | Large datasets | Very large |
 | **Learning Curve** | Moderate | Easy | Steep | Moderate |
 | **Visualization** | Excellent | Basic | Excellent | Limited |
@@ -167,7 +167,7 @@ It includes:
 ## Conda vs PIP: Key Differences
 
 | \# | Difference | Conda | PIP |
-|----|----|----|----|
+|---------------|---------------------------|----------------|---------------|
 | 1 | What it manages | Python packages, system libraries, and other languages | Python packages only |
 | 2 | Compilation | Uses pre-compiled binaries (no compilation required) | May require compilation from source |
 | 3 | Environment isolation | Built-in environment management with different Python versions | Requires `venv` or `virtualenv` |
@@ -368,35 +368,6 @@ print("Hello, Python for Data Analysis!")
 
 ```
 
-### 5.4 Variables and Assignment
-
-Variables are used to store data in memory.
-
-```{python}
-x = 10
-y = 5
-x + y
-
-```
-
--   = is the assignment operator
--   Variable names should be descriptive and meaningful
-
-### 5.5 Checking Data Types
-
-Python automatically determines the type of data stored in a variable.
-
-```{python}
-type(x)
-
-```
-
-**Common data types:**
-
--   **int** – whole numbers
--   **float** – decimal numbers
--   **str** – text
--   **bool** – True or False values
 
 ::: callout-tip
 ## Practice Exercise
@@ -404,6 +375,4 @@ type(x)
 -   Open Jupyter Notebook
 -   Print a message of your choice
 -   Perform at least three arithmetic operations
--   Create two variables and calculate their sum
--   Check the data type of one variable
 :::

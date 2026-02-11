@@ -1,0 +1,496 @@
+---
+title: "Day 2: Python Data Types & Variables"
+editor: visual
+---
+
+## Introduction
+
+In this session, we focus on **how Python stores and works with data**.\
+Understanding data types and variables is essential because **all data analysis tasks depend on correctly handling data values**.
+
+::: callout-tip
+## Learning Objectives
+
+By the end of this lesson, learners will be able to:
+
+-   Identify common Python data types
+-   Assign values to variables
+-   Perform basic operations on different data types
+:::
+
+------------------------------------------------------------------------
+
+## Variables and Assignment in Python
+
+### What is a Variable?
+
+A **variable** is a name that refers to a value stored in memory.
+
+```{python}
+x = 10
+y = 5
+x + y
+```
+
+-   x is the variable name
+-   = is the assignment operator
+-   10 is the value stored in the variable
+
+Variables allow us to store, reuse, and manipulate data. Variable names should be descriptive and meaningful
+
+### Rules for Naming Variables
+
+-   Must start with a letter or underscore (\_)
+-   Cannot start with a number
+-   Cannot contain spaces
+-   Should be descriptive and meaningful
+
+**Valid variable names**
+
+```{python}
+age = 25
+total_sales = 5000
+```
+
+**Invalid variable names**
+
+```{python}
+2age = 25      # starts with a number
+total sales = 5000   # contains space
+```
+
+## Checking Data Types
+
+Python automatically determines the type of data stored in a variable.
+
+### Common data types:
+
+-   **int** – whole numbers
+-   **float** – decimal numbers
+-   **str** – text
+-   **bool** – True or False values
+- **List (list)** – ordered, changeable
+
+**1. Numeric data types**
+
+```{python}
+# - **Integer (int)** - Whole numbers (no decimals):
+age = 25
+participants = 120
+
+# Check type
+type(age)
+```
+
+**2. String assignment (text data)**
+
+```{python}
+
+course = "Statistics and Data Analysis"
+message = "Welcome to Python!"
+
+# Check Type
+type(course)
+
+```
+
+**3. Boolean assignment (True / False)**
+
+```{python}
+is_registered = True
+has_paid = False
+passed_exam = True
+
+# Check Type
+type(is_registered)
+```
+
+
+## Numeric Data Types
+
+Python supports several numeric types, but the most commonly used are integers and floats.
+
+### Integers (int)
+
+Integers are whole numbers without decimal points.
+
+```{python}
+a = 10
+b = -3
+```
+
+**Examples of integers:**
+
+Examples of integers:
+
+-   Population counts
+-   Number of observations
+-   Age in completed years
+
+
+### Floating-Point Numbers (float)
+
+Floats are numbers with decimal points.
+
+```{python}
+height = 1.75
+temperature = 36.6
+```
+
+**Examples of floats:**
+
+- Measurements
+- Averages
+- Percentages
+
+## String Data Type (str)
+
+A string is a sequence of characters enclosed in:
+
+- Single quotes ' '
+- Double quotes " "
+- Triple quotes ''' ''' or """ """ (multi-line strings)
+
+**Key Points**
+
+- Strings are immutable (cannot be changed)
+- Supports indexing and slicing
+- Used to store text
+
+**Examples**
+
+```{python}
+name = "Python"
+language = 'Programming'
+
+print(name)
+print(type(name))
+
+```
+
+## List Data Type (list)
+
+A list is an ordered, mutable collection of items.
+
+**Key Points**
+
+- Defined using square brackets []
+- Can store multiple data types
+- Allows duplicate values
+- Mutable (elements can be modified)
+
+**Examples**
+
+```{python}
+numbers = [10, 20, 30, 40]
+print(numbers)
+print(type(numbers))
+
+mixed = [1, "Python", 3.5, True]
+print(mixed)
+
+```
+
+**Modifying a List**
+
+```{r}
+numbers[1] = 25
+print(numbers)
+
+```
+
+
+## Tuple Data Type (tuple)
+
+A tuple is an ordered, immutable collection of items.
+
+**Key Points**
+
+- Defined using parentheses ()
+- Faster than lists
+- Cannot be modified after creation
+
+**Examples**
+
+```{python}
+colors = ("red", "green", "blue")
+print(colors)
+print(type(colors))
+
+
+single = (10,)
+print(type(single))  # tuple
+```
+
+**Accessing Tuple Elements**
+
+```{r}
+print(colors[0])   # red
+```
+
+
+## Set Data Type (set)
+
+A set is an unordered collection of unique elements.
+
+**Key Points**
+
+- Defined using curly braces { }
+- No duplicate values allowed
+- Unordered (no indexing)
+- Mutable
+
+**Examples**
+
+```{python}
+numbers = {1, 2, 3, 4}
+print(numbers)
+print(type(numbers))
+
+
+duplicates = {1, 2, 2, 3}
+print(duplicates)  # {1, 2, 3}
+
+## Adding Elements
+
+numbers.add(5)
+print(numbers)
+
+```
+
+## Dictionary Data Type (dict)
+
+A dictionary stores data in key–value pairs.
+
+**Key Points**
+
+- Defined using {key: value}
+- Keys must be unique
+- Values can be of any data type
+- Mutable
+
+**Examples**
+
+```{python}
+student = {
+    "name": "Alice",
+    "age": 20,
+    "course": "Python"
+}
+
+print(student)
+print(type(student))
+```
+
+**Accessing Values**
+
+```{python}
+print(student["name"])
+```
+
+**Modifying Dictionary**
+
+```{python}
+student["age"] = 21
+student["grade"] = "A"
+print(student)
+
+```
+
+## None Data Type (NoneType)
+
+None represents the absence of a value.
+
+**Key Points**
+
+- Used when a variable has no value
+- Often used as a default return value
+
+**Examples**
+
+```{python}
+result = None
+print(result)
+print(type(result))
+
+
+def test():
+    pass
+
+print(test())  # None
+
+```
+## Bytes Data Type (bytes)
+
+Used to store binary data.
+
+**Key Points**
+
+- Immutable
+- Mainly used in file handling and networking
+
+**Examples**
+
+```{python}
+data = b"Hello"
+print(data)
+print(type(data))
+
+
+numbers = bytes([65, 66, 67])
+print(numbers)  # b'ABC'
+```
+
+## Indexing and Slicing in Python
+
+In Python, indexing and slicing are used to access elements from sequence data types such as:
+
+- Strings (str)
+- Lists (list)
+- Tuples (tuple)
+
+These data types are ordered, meaning each element has a position.
+
+**What is Indexing?**: Indexing means accessing a single element from a sequence using its position number, called an index.
+
+> Python uses zero-based indexing, which means the first element starts at index 0.
+
+**Positive Indexing**
+
+- Index starts from 0
+- Moves from left to right
+
+**Example with a string:**
+
+```{python}
+text = "Python"
+
+
+print(text[0])  # P
+print(text[3])  # h
+
+```
+
+**Negative Indexing**
+
+- Index starts from -1
+- Moves from right to left
+
+```{python}
+print(text[-1])  # n
+print(text[-3])  # h
+
+```
+
+**Indexing with Lists and Tuples**
+
+- Indexing works the same way for lists and tuples.
+
+```{python}
+numbers = [10, 20, 30, 40]
+print(numbers[1])   # 20
+print(numbers[-1])  # 40
+
+```
+
+::: {.callout-tip}
+## Important Notes on Indexing
+
+- Accessing an index outside the range causes an error
+
+```{python}
+print(text[10])  # IndexError
+```
+- Indexing returns only one element
+:::
+
+## Slicing in Python
+
+**What is Slicing?**: Slicing is used to extract a portion (sub-sequence) from a sequence.
+
+**Syntax of Slicing**
+
+```{python}
+sequence[start : stop : step]
+```
+
+| Parameter | Meaning |
+|-----------|----------|
+| start | Index to begin slicing (included) |
+| stop  | Index to end slicing (excluded) |
+| step  | Number of steps to jump (optional) |
+
+**Basic Slicing Examples**
+
+```{python}
+text = "Python"
+
+print(text[0:4])   # Pyth
+print(text[2:5])   # tho
+
+```
+
+> Note: The stop index is not included.
+
+**Slicing Without Start or Stop**
+
+```{python}
+print(text[:3])   # Pyt (from beginning)
+print(text[2:])   # thon (till end)
+print(text[:])    # Python (entire string)
+
+```
+
+**Slicing with Negative Indexes**
+
+```{python}
+print(text[-4:-1])  # tho
+```
+
+**Slicing with Step Value**
+
+The step defines how many characters to skip.
+
+```{python}
+print(text[0:6:2])  # Pto
+```
+
+**Reverse a Sequence Using Slicing**
+
+```{python}
+print(text[::-1])  # nohtyP
+```
+
+This works for strings, lists, and tuples.
+
+### Indexing vs Slicing
+
+| Feature | Indexing | Slicing |
+|----------|------------|------------|
+| Access type | Single element | Multiple elements |
+| Output | One value | Sub-sequence |
+| Syntax | `seq[index]` | `seq[start:stop:step]` |
+| Error possible | Yes (IndexError) | No (safe even if out of range) |
+
+### Indexing and Slicing with Lists
+
+```{python}
+data = [10, 20, 30, 40, 50]
+
+print(data[2])      # 30
+print(data[1:4])    # [20, 30, 40]
+print(data[::-1])   # [50, 40, 30, 20, 10]
+```
+
+::: {.callout-tip}
+## Key Points for Learners
+
+- Python indexing starts at 0
+- Negative indexing accesses elements from the end
+- Slicing never includes the stop index
+- Slicing is safe and does not raise errors
+- Works on strings, lists, and tuples
+:::
+
+> Indexing gives one element, slicing gives many elements.
+

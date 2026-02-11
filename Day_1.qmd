@@ -272,9 +272,7 @@ You can launch **Anaconda Navigator** from:
 **What you can manage with the GUI:**
 
 -   Packages
-
 -   Conda environments
-
 -   Applications such as:
 
     -   **Jupyter Notebook**

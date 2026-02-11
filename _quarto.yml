@@ -17,7 +17,8 @@ book:
   chapters:
   
     - intro.qmd              
-    - Day_1.qmd   # Day 1: Introduction to Python for Data Analysis
+    - Lession_1.qmd   # Lession 1: Introduction to Python for Data Analysis
+    - Lession_2.qmd
     
 
 format:

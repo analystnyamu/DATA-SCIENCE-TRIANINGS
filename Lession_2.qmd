@@ -170,34 +170,174 @@ print(type(name))
 
 ## List Data Type (list)
 
-A list is an ordered, mutable collection of items.
+**Definition**: A list in Python is an ordered, mutable collection of elements. Lists can store items of different data types and allow duplicate values.
 
-**Key Points**
+A list is one of Python’s most versatile data structures. It supports indexing, slicing, modification, iteration, nesting, and dynamic growth—making it essential for data storage and manipulation in Python programs.
 
-- Defined using square brackets []
-- Can store multiple data types
-- Allows duplicate values
-- Mutable (elements can be modified)
+**Characteristics of Lists**
 
-**Examples**
+| Feature            | Description                                      |
+|--------------------|--------------------------------------------------|
+| Ordered            | Items maintain insertion order                  |
+| Mutable            | Elements can be changed after creation          |
+| Indexed            | Each element has a position index               |
+| Allows duplicates  | Same value can appear multiple times            |
+| Heterogeneous      | Can store different data types                  |
+
+
+**Creating Lists**
+
+**a) Empty list**
 
 ```{python}
-numbers = [10, 20, 30, 40]
-print(numbers)
-print(type(numbers))
-
-mixed = [1, "Python", 3.5, True]
-print(mixed)
-
+a = []
 ```
+
+**b) Using List literal**
+
+```{python}
+numbers = [1,2,3,4]
+```
+
+**c) Using constructor**
+
+```{python}
+letters = list("python")
+letters
+```
+
+**Indexing**
+
+Lists use zero-based indexing.
+
+```{python}
+nums = [10, 20, 30]
+print(nums[0])   # 10
+print(nums[-1])  # 30 (last element)
+```
+
+**Slicing**
+
+Extract portions of a list.
+
+```{python}
+nums = [0,1,2,3,4,5]
+nums[1:4]     # [1,2,3]
+nums[:3]      # [0,1,2]
+nums[::2]     # [0,2,4]
+```
+
+**Syntax**: list[start : stop : step]
+
+| Parameter | Meaning                   |
+| --------- | ------------------------- |
+| start     | Index to begin (included) |
+| stop      | Index to end (excluded)   |
+| step      | Interval between elements |
+
 
 **Modifying a List**
 
-```{r}
-numbers[1] = 25
-print(numbers)
+Because lists are mutable, you can change elements.
+
+```{python}
+nums = [1,2,3]
+nums[1] = 100
+print(nums)  # [1,100,3]
+```
+
+**Common List Methods**
+
+| Method        | Description              | Example         |
+| ------------- | ------------------------ | --------------- |
+| `append(x)`   | Adds item to end         | `a.append(5)`   |
+| `insert(i,x)` | Inserts at index         | `a.insert(1,9)` |
+| `remove(x)`   | Removes first occurrence | `a.remove(3)`   |
+| `pop(i)`      | Removes by index         | `a.pop(0)`      |
+| `clear()`     | Removes all items        | `a.clear()`     |
+| `sort()`      | Sorts list               | `a.sort()`      |
+| `reverse()`   | Reverses order           | `a.reverse()`   |
+
+
+**List Operations**
+
+```{python}
+## Concatenation
+[1,2] + [3,4]   # [1,2,3,4]
+
+## Repetition
+[0] * 4   # [0,0,0,0]
+
+## Membership
+3 in [1,2,3]   # True
+
+## Looping Through Lists
+for item in [10,20,30]:
+    print(item)
+### With index:
+for i, value in enumerate([10,20,30]):
+    print(i, value)
+```
+
+
+**Nested Lists**
+
+Lists can contain other lists.
+
+```{python}
+matrix = [[1,2],[3,4],[5,6]]
+print(matrix[1][0])  # 3
+```
+
+**List Comprehension**
+
+A concise way to create lists.
+
+```{python}
+squares = [x**2 for x in range(5)]
+
+## With condition:
+evens = [x for x in range(10) if x % 2 == 0]
 
 ```
+
+**Copying Lists**
+
+Important: Assigning does NOT copy.
+
+```{python}
+a = [1,2,3]
+b = a        # same reference
+```
+
+Proper copy methods:
+
+```{python}
+b = a.copy()
+b = list(a)
+b = a[:]
+```
+
+::: callout-tip
+## When to Use Lists
+
+Use lists when you need:
+
+- Ordered data
+- Modifiable collections
+- Iteration
+- Dynamic storage
+- Storing sequences of results
+:::
+
+
+**Common Errors**
+
+| Error        | Cause                                   |
+| ------------ | --------------------------------------- |
+| `IndexError` | Accessing out-of-range index            |
+| `TypeError`  | Invalid operation (e.g., string + list) |
+| `ValueError` | Removing value not present              |
 
 
 ## Tuple Data Type (tuple)
@@ -227,6 +367,18 @@ print(type(single))  # tuple
 ```{r}
 print(colors[0])   # red
 ```
+
+
+::: callout-tip
+## List vs Tuple
+| Feature  | List              | Tuple      |
+| -------- | ----------------- | ---------- |
+| Mutable  | Yes               | No         |
+| Syntax   | `[ ]`             | `( )`      |
+| Speed    | Slightly slower   | Faster     |
+| Use case | Data that changes | Fixed data |
+:::
+
 
 
 ## Set Data Type (set)

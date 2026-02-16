@@ -342,15 +342,43 @@ Use lists when you need:
 
 ## Tuple Data Type (tuple)
 
-A tuple is an ordered, immutable collection of items.
+**Definition**: A tuple in Python is an ordered, immutable collection of elements. Once created, its elements cannot be changed, added, or removed.
 
-**Key Points**
 
-- Defined using parentheses ()
-- Faster than lists
-- Cannot be modified after creation
+```{python}
+my_tuple = (1, 2, 3, "hello", True)
+```
 
-**Examples**
+**Characteristics of Tuples**
+
+| Feature           | Description                          |
+| ----------------- | ------------------------------------ |
+| Ordered           | Maintains insertion order            |
+| Immutable         | Cannot be modified after creation    |
+| Indexed           | Supports indexing                    |
+| Allows duplicates | Same value can appear multiple times |
+| Heterogeneous     | Can store mixed data types           |
+
+
+**Creating Tuples**
+
+
+```{python}
+# a) Empty tuple
+t = ()
+# b) With elements
+
+nums = (10, 20, 30)
+
+#c) Without parentheses (packing)
+t = 1, 2, 3
+
+# d) Single-element tuple (important syntax)
+single = (5,)   # comma is required
+
+```
+
+**Other Examples**
 
 ```{python}
 colors = ("red", "green", "blue")
@@ -362,22 +390,158 @@ single = (10,)
 print(type(single))  # tuple
 ```
 
-**Accessing Tuple Elements**
+**Indexing**: Tuples support zero-based indexing.
 
-```{r}
-print(colors[0])   # red
+```{python}
+
+t = (10, 20, 30)
+print(t[0])   # 10
+print(t[-1])  # 30
+```
+
+**Slicing**: Works the same as lists.
+
+```{python}
+t = (0,1,2,3,4)
+t[1:4]     # (1,2,3)
+t[:3]      # (0,1,2)
+t[::2]     # (0,2,4)
+```
+
+**Immutability**: 
+
+You cannot modify tuple elements.
+
+```{python}
+t = (1,2,3)
+t[1] = 100   # ❌ Error
+
+## Error:
+TypeError: 'tuple' object does not support item assignment
+```
+
+However, if a tuple contains mutable objects (like lists), those objects can be modified.
+
+```{python}
+t = ([1,2], [3,4])
+t[0][0] = 99
+```
+
+**Tuple Methods**: Tuples have only two built-in methods:
+
+| Method     | Description                  |
+| ---------- | ---------------------------- |
+| `count(x)` | Counts occurrences of value  |
+| `index(x)` | Returns first index of value |
+
+```{python}
+t = (1,2,2,3)
+t.count(2)   # 2
+t.index(3)   # 3
+```
+
+**Tuple Operations**
+
+```{python}
+## Concatenation
+(1,2) + (3,4)   # (1,2,3,4)
+
+## Repetition
+(0,) * 3   # (0,0,0)
+
+## Membership
+3 in (1,2,3)   # True
+```
+
+
+**Packing and Unpacking**
+
+```{python}
+## Packing
+person = ("Martin", 25, "Statistician")
+
+## Unpacking
+name, age, job = person
+
+## Using star unpacking
+a, *b = (1,2,3,4)
+# a = 1, b = [2,3,4]
+
+```
+
+
+**Nested Tuples**
+
+```{python}
+nested = ((1,2), (3,4))
+nested
+print(nested[1][0])   # 3
+
+# nested[1][0] means:
+
+#> “Go to index 1 of nested, then from that result go to index 0.”
+```
+
+::: callout-tip
+## When to Use Tuples
+
+Use tuples when:
+
+- Data should not change
+- You need data integrity
+- Storing constants
+- Returning multiple values from functions
+- Using data as dictionary keys
+:::
+
+::: callout-tip
+## Advantages of Tuples
+
+- Faster than lists
+- Memory efficient
+- Safe from accidental modification
+- Hashable (can be dictionary keys if elements are immutable)
+:::
+
+**Common Errors**
+
+| Error        | Cause                               |
+| ------------ | ----------------------------------- |
+| `TypeError`  | Trying to modify tuple              |
+| `ValueError` | Unpacking wrong number of variables |
+
+```{python}
+a, b = (1,2,3)   # ❌ ValueError
+```
+
+**Practical Examples**: Returning multiple values
+
+```{python}
+def stats(x, y):
+    return x+y, x*y
+
+s, p = stats(2,3)
+```
+
+**Dictionary key**
+
+```{phton}
+location = {(1,2): "Point A"}
 ```
 
 
 ::: callout-tip
 ## List vs Tuple
-| Feature  | List              | Tuple      |
-| -------- | ----------------- | ---------- |
-| Mutable  | Yes               | No         |
-| Syntax   | `[ ]`             | `( )`      |
-| Speed    | Slightly slower   | Faster     |
-| Use case | Data that changes | Fixed data |
+
+| Feature     | Tuple      | List            |
+| ----------- | ---------- | --------------- |
+| Mutability  | Immutable  | Mutable         |
+| Syntax      | `( )`      | `[ ]`           |
+| Methods     | Few        | Many            |
+| Performance | Faster     | Slightly slower |
+| Use case    | Fixed data | Changing data   |
 :::
+
 
 
 

@@ -69,7 +69,7 @@ Python automatically determines the type of data stored in a variable.
 -   **float** – decimal numbers
 -   **str** – text
 -   **bool** – True or False values
-- **List (list)** – ordered, changeable
+-   **List (list)** – ordered, changeable
 
 **1. Numeric data types**
 
@@ -105,7 +105,6 @@ passed_exam = True
 type(is_registered)
 ```
 
-
 ## Numeric Data Types
 
 Python supports several numeric types, but the most commonly used are integers and floats.
@@ -127,7 +126,6 @@ Examples of integers:
 -   Number of observations
 -   Age in completed years
 
-
 ### Floating-Point Numbers (float)
 
 Floats are numbers with decimal points.
@@ -139,23 +137,23 @@ temperature = 36.6
 
 **Examples of floats:**
 
-- Measurements
-- Averages
-- Percentages
+-   Measurements
+-   Averages
+-   Percentages
 
 ## String Data Type (str)
 
 A string is a sequence of characters enclosed in:
 
-- Single quotes ' '
-- Double quotes " "
-- Triple quotes ''' ''' or """ """ (multi-line strings)
+-   Single quotes ' '
+-   Double quotes " "
+-   Triple quotes ''' ''' or """ """ (multi-line strings)
 
 **Key Points**
 
-- Strings are immutable (cannot be changed)
-- Supports indexing and slicing
-- Used to store text
+-   Strings are immutable (cannot be changed)
+-   Supports indexing and slicing
+-   Used to store text
 
 **Examples**
 
@@ -176,14 +174,13 @@ A list is one of Python’s most versatile data structures. It supports indexing
 
 **Characteristics of Lists**
 
-| Feature            | Description                                      |
-|--------------------|--------------------------------------------------|
-| Ordered            | Items maintain insertion order                  |
-| Mutable            | Elements can be changed after creation          |
-| Indexed            | Each element has a position index               |
-| Allows duplicates  | Same value can appear multiple times            |
-| Heterogeneous      | Can store different data types                  |
-
+| Feature           | Description                            |
+|-------------------|----------------------------------------|
+| Ordered           | Items maintain insertion order         |
+| Mutable           | Elements can be changed after creation |
+| Indexed           | Each element has a position index      |
+| Allows duplicates | Same value can appear multiple times   |
+| Heterogeneous     | Can store different data types         |
 
 **Creating Lists**
 
@@ -227,14 +224,13 @@ nums[:3]      # [0,1,2]
 nums[::2]     # [0,2,4]
 ```
 
-**Syntax**: list[start : stop : step]
+**Syntax**: list\[start : stop : step\]
 
 | Parameter | Meaning                   |
-| --------- | ------------------------- |
+|-----------|---------------------------|
 | start     | Index to begin (included) |
 | stop      | Index to end (excluded)   |
 | step      | Interval between elements |
-
 
 **Modifying a List**
 
@@ -249,7 +245,7 @@ print(nums)  # [1,100,3]
 **Common List Methods**
 
 | Method        | Description              | Example         |
-| ------------- | ------------------------ | --------------- |
+|---------------|--------------------------|-----------------|
 | `append(x)`   | Adds item to end         | `a.append(5)`   |
 | `insert(i,x)` | Inserts at index         | `a.insert(1,9)` |
 | `remove(x)`   | Removes first occurrence | `a.remove(3)`   |
@@ -257,7 +253,6 @@ print(nums)  # [1,100,3]
 | `clear()`     | Removes all items        | `a.clear()`     |
 | `sort()`      | Sorts list               | `a.sort()`      |
 | `reverse()`   | Reverses order           | `a.reverse()`   |
-
 
 **List Operations**
 
@@ -278,7 +273,6 @@ for item in [10,20,30]:
 for i, value in enumerate([10,20,30]):
     print(i, value)
 ```
-
 
 **Nested Lists**
 
@@ -323,27 +317,24 @@ b = a[:]
 
 Use lists when you need:
 
-- Ordered data
-- Modifiable collections
-- Iteration
-- Dynamic storage
-- Storing sequences of results
+-   Ordered data
+-   Modifiable collections
+-   Iteration
+-   Dynamic storage
+-   Storing sequences of results
 :::
-
 
 **Common Errors**
 
 | Error        | Cause                                   |
-| ------------ | --------------------------------------- |
+|--------------|-----------------------------------------|
 | `IndexError` | Accessing out-of-range index            |
 | `TypeError`  | Invalid operation (e.g., string + list) |
 | `ValueError` | Removing value not present              |
 
-
 ## Tuple Data Type (tuple)
 
 **Definition**: A tuple in Python is an ordered, immutable collection of elements. Once created, its elements cannot be changed, added, or removed.
-
 
 ```{python}
 my_tuple = (1, 2, 3, "hello", True)
@@ -352,16 +343,14 @@ my_tuple = (1, 2, 3, "hello", True)
 **Characteristics of Tuples**
 
 | Feature           | Description                          |
-| ----------------- | ------------------------------------ |
+|-------------------|--------------------------------------|
 | Ordered           | Maintains insertion order            |
 | Immutable         | Cannot be modified after creation    |
 | Indexed           | Supports indexing                    |
 | Allows duplicates | Same value can appear multiple times |
 | Heterogeneous     | Can store mixed data types           |
 
-
 **Creating Tuples**
-
 
 ```{python}
 # a) Empty tuple
@@ -408,7 +397,7 @@ t[:3]      # (0,1,2)
 t[::2]     # (0,2,4)
 ```
 
-**Immutability**: 
+**Immutability**:
 
 You cannot modify tuple elements.
 
@@ -430,7 +419,7 @@ t[0][0] = 99
 **Tuple Methods**: Tuples have only two built-in methods:
 
 | Method     | Description                  |
-| ---------- | ---------------------------- |
+|------------|------------------------------|
 | `count(x)` | Counts occurrences of value  |
 | `index(x)` | Returns first index of value |
 
@@ -453,7 +442,6 @@ t.index(3)   # 3
 3 in (1,2,3)   # True
 ```
 
-
 **Packing and Unpacking**
 
 ```{python}
@@ -468,7 +456,6 @@ a, *b = (1,2,3,4)
 # a = 1, b = [2,3,4]
 
 ```
-
 
 **Nested Tuples**
 
@@ -487,26 +474,26 @@ print(nested[1][0])   # 3
 
 Use tuples when:
 
-- Data should not change
-- You need data integrity
-- Storing constants
-- Returning multiple values from functions
-- Using data as dictionary keys
+-   Data should not change
+-   You need data integrity
+-   Storing constants
+-   Returning multiple values from functions
+-   Using data as dictionary keys
 :::
 
 ::: callout-tip
 ## Advantages of Tuples
 
-- Faster than lists
-- Memory efficient
-- Safe from accidental modification
-- Hashable (can be dictionary keys if elements are immutable)
+-   Faster than lists
+-   Memory efficient
+-   Safe from accidental modification
+-   Hashable (can be dictionary keys if elements are immutable)
 :::
 
 **Common Errors**
 
 | Error        | Cause                               |
-| ------------ | ----------------------------------- |
+|--------------|-------------------------------------|
 | `TypeError`  | Trying to modify tuple              |
 | `ValueError` | Unpacking wrong number of variables |
 
@@ -529,12 +516,11 @@ s, p = stats(2,3)
 location = {(1,2): "Point A"}
 ```
 
-
 ::: callout-tip
 ## List vs Tuple
 
 | Feature     | Tuple      | List            |
-| ----------- | ---------- | --------------- |
+|-------------|------------|-----------------|
 | Mutability  | Immutable  | Mutable         |
 | Syntax      | `( )`      | `[ ]`           |
 | Methods     | Few        | Many            |
@@ -542,37 +528,177 @@ location = {(1,2): "Point A"}
 | Use case    | Fixed data | Changing data   |
 :::
 
-
-
-
 ## Set Data Type (set)
 
-A set is an unordered collection of unique elements.
-
-**Key Points**
-
-- Defined using curly braces { }
-- No duplicate values allowed
-- Unordered (no indexing)
-- Mutable
-
-**Examples**
+**Definition**: A set in Python is an unordered, mutable collection of unique elements. Sets are mainly used for membership testing, removing duplicates, and mathematical set operations.
 
 ```{python}
-numbers = {1, 2, 3, 4}
-print(numbers)
-print(type(numbers))
+my_set = {1, 2, 3, 4}
+```
 
+**Characteristics of Sets**
 
-duplicates = {1, 2, 2, 3}
-print(duplicates)  # {1, 2, 3}
+| Feature         | Description                                |
+|-----------------|--------------------------------------------|
+| Unordered       | No fixed position of elements              |
+| Mutable         | Elements can be added or removed           |
+| Unique elements | Duplicate values are automatically removed |
+| Unindexed       | Cannot access elements by position         |
+| Iterable        | Can loop through elements                  |
 
-## Adding Elements
+**Creating Sets**
 
-numbers.add(5)
-print(numbers)
+```{python}
+
+# a) Using curly braces
+s = {1, 2, 3}
+
+# b) Using constructor
+s = set([1, 2, 3])
+
+# c) Empty set (important)
+
+s = set()   # correct
 
 ```
+
+> {} creates a dictionary, not a set.
+
+**Duplicate Removal**
+
+```{python}
+nums = {1,1,2,2,3}
+print(nums)
+
+
+nums = [1,2,2,3,3,4]
+unique = list(set(nums))
+```
+
+**Adding Elements**
+
+```{python}
+s = {1,2}
+s.add(3)
+```
+
+**Add multiple elements:**
+
+```{python}
+s.update([4,5,6])
+```
+
+**Removing Elements**
+
+| Method       | Description                          |
+|--------------|--------------------------------------|
+| `remove(x)`  | Removes element; error if not found  |
+| `discard(x)` | Removes element; no error if missing |
+| `pop()`      | Removes random element               |
+| `clear()`    | Removes all elements                 |
+
+**Example:**
+
+```{python}
+
+## Remove(x)
+s = {1,2,3}
+s.remove(2)
+
+## Discard(x)
+p = {3,4,6,7}
+p.discard(4)
+
+## pop()
+w = {3, 4, 6, 7}
+elem = w.pop()  # removes any element (randomly)
+print(elem)  # the element removed
+print(w)     # the set without that element
+
+## clear()
+p = {3, 4, 6, 7}
+p.clear()
+print(p)  # Output: set(). So use clear() if you want to empty the whole set, not just remove a single element.
+```
+
+**Set Operations(Mathematical)**
+
+```{python}
+A = {1,2,3}
+B = {3,4,5}
+```
+
+| Operation            | Symbol  | Result        |
+|----------------------|---------|---------------|
+| Union                | `A | B` | `{1,2,3,4,5}` |
+| Intersection         | `A & B` | `{3}`         |
+| Difference           | `A - B` | `{1,2}`       |
+| Symmetric Difference | `A ^ B` | `{1,2,4,5}`   |
+
+
+**Membership Testing**: Sets are very fast for checking membership.
+
+```{python}
+3 in {1,2,3}   # True
+```
+
+**Iterating Through Sets**
+
+```{python}
+for item in {1,2,3}:
+    print(item)
+```
+
+**Frozen Set (frozenset)**: A frozenset is an immutable version of a set.
+
+```{python}
+fs = frozenset([1,2,3])
+```
+
+> Order is not guaranteed.
+
+**Properties:**
+
+- Cannot add or remove elements
+- Can be used as dictionary keys
+
+
+::: callout-tip
+## When to Use Sets
+
+Use sets when you need:
+
+- Unique values only
+- Fast membership checking
+- Removing duplicates
+- Mathematical operations
+- Comparing collections
+
+**Common Errors**
+
+| Error                        | Cause                                    |
+| ---------------------------- | ---------------------------------------- |
+| `TypeError: unhashable type` | Trying to add list/dict to set           |
+| `KeyError`                   | Removing missing element with `remove()` |
+
+```{python}
+{1,2}.add([3,4])  # ❌ lists cannot be elements
+```
+:::
+
+::: callout-tip
+##Set vs List vs Tuple
+
+| Feature            | Set     | List   | Tuple  |
+| ------------------ | ------- | ------ | ------ |
+| Ordered            | No      | Yes    | Yes    |
+| Mutable            | Yes     | Yes    | No     |
+| Duplicates         | No      | Yes    | Yes    |
+| Indexed            | No      | Yes    | Yes    |
+| Speed (membership) | Fastest | Slower | Slower |
+:::
+
+
 
 ## Dictionary Data Type (dict)
 
@@ -580,10 +706,10 @@ A dictionary stores data in key–value pairs.
 
 **Key Points**
 
-- Defined using {key: value}
-- Keys must be unique
-- Values can be of any data type
-- Mutable
+-   Defined using {key: value}
+-   Keys must be unique
+-   Values can be of any data type
+-   Mutable
 
 **Examples**
 
@@ -619,8 +745,8 @@ None represents the absence of a value.
 
 **Key Points**
 
-- Used when a variable has no value
-- Often used as a default return value
+-   Used when a variable has no value
+-   Often used as a default return value
 
 **Examples**
 
@@ -636,14 +762,15 @@ def test():
 print(test())  # None
 
 ```
+
 ## Bytes Data Type (bytes)
 
 Used to store binary data.
 
 **Key Points**
 
-- Immutable
-- Mainly used in file handling and networking
+-   Immutable
+-   Mainly used in file handling and networking
 
 **Examples**
 
@@ -661,9 +788,9 @@ print(numbers)  # b'ABC'
 
 In Python, indexing and slicing are used to access elements from sequence data types such as:
 
-- Strings (str)
-- Lists (list)
-- Tuples (tuple)
+-   Strings (str)
+-   Lists (list)
+-   Tuples (tuple)
 
 These data types are ordered, meaning each element has a position.
 
@@ -673,8 +800,8 @@ These data types are ordered, meaning each element has a position.
 
 **Positive Indexing**
 
-- Index starts from 0
-- Moves from left to right
+-   Index starts from 0
+-   Moves from left to right
 
 **Example with a string:**
 
@@ -689,8 +816,8 @@ print(text[3])  # h
 
 **Negative Indexing**
 
-- Index starts from -1
-- Moves from right to left
+-   Index starts from -1
+-   Moves from right to left
 
 ```{python}
 print(text[-1])  # n
@@ -700,7 +827,7 @@ print(text[-3])  # h
 
 **Indexing with Lists and Tuples**
 
-- Indexing works the same way for lists and tuples.
+-   Indexing works the same way for lists and tuples.
 
 ```{python}
 numbers = [10, 20, 30, 40]
@@ -709,15 +836,16 @@ print(numbers[-1])  # 40
 
 ```
 
-::: {.callout-tip}
+::: callout-tip
 ## Important Notes on Indexing
 
-- Accessing an index outside the range causes an error
+-   Accessing an index outside the range causes an error
 
 ```{python}
 print(text[10])  # IndexError
 ```
-- Indexing returns only one element
+
+-   Indexing returns only one element
 :::
 
 ## Slicing in Python
@@ -730,11 +858,11 @@ print(text[10])  # IndexError
 sequence[start : stop : step]
 ```
 
-| Parameter | Meaning |
-|-----------|----------|
-| start | Index to begin slicing (included) |
-| stop  | Index to end slicing (excluded) |
-| step  | Number of steps to jump (optional) |
+| Parameter | Meaning                            |
+|-----------|------------------------------------|
+| start     | Index to begin slicing (included)  |
+| stop      | Index to end slicing (excluded)    |
+| step      | Number of steps to jump (optional) |
 
 **Basic Slicing Examples**
 
@@ -781,11 +909,11 @@ This works for strings, lists, and tuples.
 
 ### Indexing vs Slicing
 
-| Feature | Indexing | Slicing |
-|----------|------------|------------|
-| Access type | Single element | Multiple elements |
-| Output | One value | Sub-sequence |
-| Syntax | `seq[index]` | `seq[start:stop:step]` |
+| Feature        | Indexing         | Slicing                        |
+|----------------|------------------|--------------------------------|
+| Access type    | Single element   | Multiple elements              |
+| Output         | One value        | Sub-sequence                   |
+| Syntax         | `seq[index]`     | `seq[start:stop:step]`         |
 | Error possible | Yes (IndexError) | No (safe even if out of range) |
 
 ### Indexing and Slicing with Lists
@@ -798,15 +926,14 @@ print(data[1:4])    # [20, 30, 40]
 print(data[::-1])   # [50, 40, 30, 20, 10]
 ```
 
-::: {.callout-tip}
+::: callout-tip
 ## Key Points for Learners
 
-- Python indexing starts at 0
-- Negative indexing accesses elements from the end
-- Slicing never includes the stop index
-- Slicing is safe and does not raise errors
-- Works on strings, lists, and tuples
+-   Python indexing starts at 0
+-   Negative indexing accesses elements from the end
+-   Slicing never includes the stop index
+-   Slicing is safe and does not raise errors
+-   Works on strings, lists, and tuples
 :::
 
 > Indexing gives one element, slicing gives many elements.
-

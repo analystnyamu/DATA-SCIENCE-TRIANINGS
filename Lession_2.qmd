@@ -702,42 +702,81 @@ Use sets when you need:
 
 ## Dictionary Data Type (dict)
 
-A dictionary stores data in key–value pairs.
+**Definition**: A dictionary in Python is an unordered, mutable collection of key–value pairs. Each key must be unique and immutable, while values can be of any data type.
 
-**Key Points**
+**Characteristics of Dictionaries**
 
--   Defined using {key: value}
--   Keys must be unique
--   Values can be of any data type
--   Mutable
+| Feature                  | Description              |
+| ------------------------ | ------------------------ |
+| Key–value structure      | Data stored as pairs     |
+| Mutable                  | Can modify values        |
+| Keys unique              | Duplicate keys overwrite |
+| Fast lookup              | Optimized for retrieval  |
+| Unordered (conceptually) | No positional indexing   |
 
-**Examples**
+
+**Example**
 
 ```{python}
 student = {
-    "name": "Alice",
-    "age": 20,
-    "course": "Python"
+    "name": "Martin",
+    "age": 25,
+    "profession": "Statistician"
 }
 
 print(student)
 print(type(student))
 ```
 
-**Accessing Values**
+**Creating Dictionaries**
 
 ```{python}
-print(student["name"])
+# a) Using curly braces
+d = {"a": 1, "b": 2}
+
+# b) Using constructor
+d = dict(a=1, b=2)
+
+# c) Empty dictionary
+d = {}
 ```
+
+
+**Accessing Values**
+
+Dictionaries use keys instead of indexes.
+
+```{python}
+person = {"name":"Martin", "age":25}
+person["name"]     # Martin
+
+# Safe access
+person.get("age")
+
+```
+
+Difference:
+
+- dict[key] → error if key missing
+- dict.get(key) → returns None (or default)
 
 **Modifying Dictionary**
 
 ```{python}
+# Adding and Updating Items
+
 student["age"] = 21
 student["grade"] = "A"
 print(student)
 
+
+d = {"a":1}
+d["b"] = 2      # add
+d["a"] = 100    # update
 ```
+
+**Removing Items**
+
 
 ## None Data Type (NoneType)
 
@@ -762,6 +801,177 @@ def test():
 print(test())  # None
 
 ```
+
+**Dictionary Methods**
+
+| Method     | Description             |
+| ---------- | ----------------------- |
+| `keys()`   | Returns all keys        |
+| `values()` | Returns all values      |
+| `items()`  | Returns key–value pairs |
+| `update()` | Merges dictionaries     |
+| `copy()`   | Returns copy            |
+
+**Example**
+
+```{python}
+d = {"a":1, "b":2}
+d.items()
+
+d.keys()
+d.copy()
+```
+
+
+```{python}
+## Updating with Another Dictionary
+
+student = {"name": "John", "age": 20}
+new_data = {"age": 21, "grade": "A"}
+
+student.update(new_data)
+
+print(student)
+```
+
+```{python}
+## Updating with Key-Value Pairs Directly
+
+student = {"name": "John", "age": 20}
+
+student.update(age=22, city="New York")
+
+print(student)
+```
+
+```{python}
+## Updating with List of Tuples
+
+student = {"name": "John", "age": 20}
+
+student.update([("age", 23), ("country", "USA")])
+
+print(student)
+
+```
+
+**Iterating Through Dictionaries**
+
+```{python}
+# Loop through keys
+d = {"a":1, "b":2}
+d.items()
+
+for key in d:
+    print(key)
+    
+#Loop through values 
+for value in d.values():
+    print(value)
+    
+    
+#Loop through both
+
+  for k, v in d.items():
+    print(k, v)
+```
+
+
+**Nested Dictionaries**
+
+Dictionaries can contain other dictionaries.
+
+```{python}
+students = {
+    "s1": {"name":"John", "age":20},
+    "s2": {"name":"Jane", "age":21}
+}
+
+students["s1"]["name"]   # John
+```
+
+**Dictionary Comprehension**
+
+```{python}
+squares = {x: x**2 for x in range(5)}
+squares
+# with condition
+evens = {x: x for x in range(10) if x % 2 == 0}
+evens
+```
+::: callout-tip
+## When to Use Dictionaries
+
+Use dictionaries when you need:
+
+- Fast lookup by identifier
+- Structured data storage
+- Mapping relationships
+- Named attributes
+- Configuration storage
+:::
+
+
+**Common Errors**
+
+| Error        | Cause                 |
+| ------------ | --------------------- |
+| `KeyError`   | Accessing missing key |
+| `TypeError`  | Using mutable key     |
+| `ValueError` | Wrong unpacking       |
+
+
+**Dictionary vs List vs Set**
+
+| Feature           | Dictionary             | List    | Set          |
+| ----------------- | ---------------------- | ------- | ------------ |
+| Access            | Key                    | Index   | No direct    |
+| Order             | Conceptually unordered | Ordered | Unordered    |
+| Mutable           | Yes                    | Yes     | Yes          |
+| Unique constraint | Keys only              | None    | All elements |
+
+
+```{python}
+d = {"a":1}
+d["b"]   # KeyError
+```
+::: callout-tip
+## Practical Examples
+
+**Counting frequencies**
+
+```{python}
+text = "banana"
+freq = {}
+
+for char in text:
+    freq[char] = freq.get(char, 0) + 1
+    
+# What freq.get(char, 0) does:
+# Looks for char in the dictionary.
+# If it exists → returns its current value.
+# If it does NOT exist → returns 0 (default value).
+# Then we add 1 to it.
+    
+# instead of get we can use:
+# if char in freq:
+#     freq[char] += 1
+# else:
+#     freq[char] = 1
+
+```
+
+**Storing records**
+
+```{python}
+student = {
+    "name": "Martin",
+    "score": 95,
+    "passed": True
+}
+```
+:::
+
 
 ## Bytes Data Type (bytes)
 

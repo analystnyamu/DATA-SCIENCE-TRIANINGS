@@ -635,7 +635,6 @@ B = {3,4,5}
 | Difference           | `A - B` | `{1,2}`       |
 | Symmetric Difference | `A ^ B` | `{1,2,4,5}`   |
 
-
 **Membership Testing**: Sets are very fast for checking membership.
 
 ```{python}
@@ -659,25 +658,24 @@ fs = frozenset([1,2,3])
 
 **Properties:**
 
-- Cannot add or remove elements
-- Can be used as dictionary keys
-
+-   Cannot add or remove elements
+-   Can be used as dictionary keys
 
 ::: callout-tip
 ## When to Use Sets
 
 Use sets when you need:
 
-- Unique values only
-- Fast membership checking
-- Removing duplicates
-- Mathematical operations
-- Comparing collections
+-   Unique values only
+-   Fast membership checking
+-   Removing duplicates
+-   Mathematical operations
+-   Comparing collections
 
 **Common Errors**
 
 | Error                        | Cause                                    |
-| ---------------------------- | ---------------------------------------- |
+|------------------------------|------------------------------------------|
 | `TypeError: unhashable type` | Trying to add list/dict to set           |
 | `KeyError`                   | Removing missing element with `remove()` |
 
@@ -690,15 +688,13 @@ Use sets when you need:
 ##Set vs List vs Tuple
 
 | Feature            | Set     | List   | Tuple  |
-| ------------------ | ------- | ------ | ------ |
+|--------------------|---------|--------|--------|
 | Ordered            | No      | Yes    | Yes    |
 | Mutable            | Yes     | Yes    | No     |
 | Duplicates         | No      | Yes    | Yes    |
 | Indexed            | No      | Yes    | Yes    |
 | Speed (membership) | Fastest | Slower | Slower |
 :::
-
-
 
 ## Dictionary Data Type (dict)
 
@@ -707,13 +703,12 @@ Use sets when you need:
 **Characteristics of Dictionaries**
 
 | Feature                  | Description              |
-| ------------------------ | ------------------------ |
+|--------------------------|--------------------------|
 | Key–value structure      | Data stored as pairs     |
 | Mutable                  | Can modify values        |
 | Keys unique              | Duplicate keys overwrite |
 | Fast lookup              | Optimized for retrieval  |
 | Unordered (conceptually) | No positional indexing   |
-
 
 **Example**
 
@@ -741,7 +736,6 @@ d = dict(a=1, b=2)
 d = {}
 ```
 
-
 **Accessing Values**
 
 Dictionaries use keys instead of indexes.
@@ -757,8 +751,8 @@ person.get("age")
 
 Difference:
 
-- dict[key] → error if key missing
-- dict.get(key) → returns None (or default)
+-   dict\[key\] → error if key missing
+-   dict.get(key) → returns None (or default)
 
 **Modifying Dictionary**
 
@@ -776,7 +770,6 @@ d["a"] = 100    # update
 ```
 
 **Removing Items**
-
 
 ## None Data Type (NoneType)
 
@@ -805,7 +798,7 @@ print(test())  # None
 **Dictionary Methods**
 
 | Method     | Description             |
-| ---------- | ----------------------- |
+|------------|-------------------------|
 | `keys()`   | Returns all keys        |
 | `values()` | Returns all values      |
 | `items()`  | Returns key–value pairs |
@@ -821,7 +814,6 @@ d.items()
 d.keys()
 d.copy()
 ```
-
 
 ```{python}
 ## Updating with Another Dictionary
@@ -876,7 +868,6 @@ for value in d.values():
     print(k, v)
 ```
 
-
 **Nested Dictionaries**
 
 Dictionaries can contain other dictionaries.
@@ -899,42 +890,41 @@ squares
 evens = {x: x for x in range(10) if x % 2 == 0}
 evens
 ```
+
 ::: callout-tip
 ## When to Use Dictionaries
 
 Use dictionaries when you need:
 
-- Fast lookup by identifier
-- Structured data storage
-- Mapping relationships
-- Named attributes
-- Configuration storage
+-   Fast lookup by identifier
+-   Structured data storage
+-   Mapping relationships
+-   Named attributes
+-   Configuration storage
 :::
-
 
 **Common Errors**
 
 | Error        | Cause                 |
-| ------------ | --------------------- |
+|--------------|-----------------------|
 | `KeyError`   | Accessing missing key |
 | `TypeError`  | Using mutable key     |
 | `ValueError` | Wrong unpacking       |
 
-
 **Dictionary vs List vs Set**
 
 | Feature           | Dictionary             | List    | Set          |
-| ----------------- | ---------------------- | ------- | ------------ |
+|-------------------|------------------------|---------|--------------|
 | Access            | Key                    | Index   | No direct    |
 | Order             | Conceptually unordered | Ordered | Unordered    |
 | Mutable           | Yes                    | Yes     | Yes          |
 | Unique constraint | Keys only              | None    | All elements |
 
-
 ```{python}
 d = {"a":1}
 d["b"]   # KeyError
 ```
+
 ::: callout-tip
 ## Practical Examples
 
@@ -972,7 +962,6 @@ student = {
 ```
 :::
 
-
 ## Bytes Data Type (bytes)
 
 **Definition**: The bytes data type in Python represents a sequence of raw binary data. It is an immutable sequence of integers where each value must be in the range 0–255.
@@ -992,7 +981,7 @@ print(numbers)  # b'ABC'
 **Characteristics of Bytes**
 
 | Feature     | Description                       |
-| ----------- | --------------------------------- |
+|-------------|-----------------------------------|
 | Immutable   | Cannot be modified after creation |
 | Ordered     | Maintains sequence order          |
 | Byte values | Each element is integer (0–255)   |
@@ -1036,7 +1025,6 @@ b[0] = 70   # ❌ Error
 
 **Converting Between Types**
 
-
 ```{python}
 # - String → Bytes
 text = "hello"
@@ -1059,43 +1047,39 @@ for byte in b"ABC":
 **Bytes Methods (Common)**
 
 | Method         | Description             |
-| -------------- | ----------------------- |
+|----------------|-------------------------|
 | `decode()`     | Converts bytes → string |
 | `count()`      | Counts occurrences      |
 | `find()`       | Returns index           |
 | `startswith()` | Checks prefix           |
 | `endswith()`   | Checks suffix           |
 
-
-
 ::: callout-tip
 ## When to Use Bytes
 
 Use bytes when working with:
 
-- Files (images, PDFs, audio)
-- Network transmission
-- Encryption / hashing
-- Binary protocols
-- Low-level data processing
+-   Files (images, PDFs, audio)
+-   Network transmission
+-   Encryption / hashing
+-   Binary protocols
+-   Low-level data processing
 
 **Bytes vs Bytearray**
 
 | Feature     | bytes             | bytearray              |
-| ----------- | ----------------- | ---------------------- |
+|-------------|-------------------|------------------------|
 | Mutable     | No                | Yes                    |
 | Performance | Faster            | Slightly slower        |
 | Use case    | Fixed binary data | Modifiable binary data |
 
-
 **Common Errors**
 
 | Error                | Cause                 |
-| -------------------- | --------------------- |
+|----------------------|-----------------------|
 | `TypeError`          | Mixing str and bytes  |
 | `UnicodeDecodeError` | Wrong decoding format |
 | `ValueError`         | Byte outside 0–255    |
-
 :::
 
 **Practical Examples**
@@ -1122,21 +1106,22 @@ packet = b"\x48\x49"
 
 **Key Points About ASCII:**
 
-- **Character Representation**: ASCII provides a way to represent characters (like 'A', 'B', '1', '$', etc.) as numeric codes (0 to 127). For example:
-  - `65` represents the letter `'A'`
-  - `97` represents the letter `'a'`
-  - `48` represents the digit `'0'`
+-   **Character Representation**: ASCII provides a way to represent characters (like 'A', 'B', '1', '\$', etc.) as numeric codes (0 to 127). For example:
 
-- **7-bit Encoding**: The original ASCII standard uses 7 bits for each character, meaning it can represent 128 different characters (from 0 to 127). The 7th bit was not used initially, so it was effectively a 7-bit code, but extended versions of ASCII can use the 8th bit for additional characters (leading to extended ASCII, which can represent 256 characters).
+    -   `65` represents the letter `'A'`
+    -   `97` represents the letter `'a'`
+    -   `48` represents the digit `'0'`
 
-- **Control Characters**: ASCII includes control characters (with codes from 0 to 31) that control text formatting, like newline, tab, and carriage return. These aren't visible characters but perform specific functions in text processing.
+-   **7-bit Encoding**: The original ASCII standard uses 7 bits for each character, meaning it can represent 128 different characters (from 0 to 127). The 7th bit was not used initially, so it was effectively a 7-bit code, but extended versions of ASCII can use the 8th bit for additional characters (leading to extended ASCII, which can represent 256 characters).
+
+-   **Control Characters**: ASCII includes control characters (with codes from 0 to 31) that control text formatting, like newline, tab, and carriage return. These aren't visible characters but perform specific functions in text processing.
 
 **Common ASCII Characters:**
 
-- **Letters**: 'A' to 'Z' (uppercase) are represented by ASCII values 65–90, and 'a' to 'z' (lowercase) by values 97–122.
-- **Digits**: '0' to '9' are represented by ASCII values 48–57.
-- **Punctuation**: Characters like `!`, `"`, `#`, etc., are also part of ASCII.
-- **Control Characters**: These include characters like `LF` (line feed, 10), `CR` (carriage return, 13), and `ESC` (escape, 27).
+-   **Letters**: 'A' to 'Z' (uppercase) are represented by ASCII values 65–90, and 'a' to 'z' (lowercase) by values 97–122.
+-   **Digits**: '0' to '9' are represented by ASCII values 48–57.
+-   **Punctuation**: Characters like `!`, `"`, `#`, etc., are also part of ASCII.
+-   **Control Characters**: These include characters like `LF` (line feed, 10), `CR` (carriage return, 13), and `ESC` (escape, 27).
 
 **Example of ASCII Table Mapping:**
 
@@ -1152,12 +1137,10 @@ packet = b"\x48\x49"
 
 **Why ASCII Is Important:**
 
-- **Interoperability**: ASCII provides a universal standard for representing text, which allows systems, programs, and devices to exchange text in a consistent and predictable manner.
-- **Simplicity**: The original ASCII set was simple and efficient, designed for early computer systems.
+-   **Interoperability**: ASCII provides a universal standard for representing text, which allows systems, programs, and devices to exchange text in a consistent and predictable manner.
+-   **Simplicity**: The original ASCII set was simple and efficient, designed for early computer systems.
 
 In modern computing, ASCII is often extended to 8-bit encodings (like **UTF-8**) to support a wider range of characters, but it remains foundational in character encoding and text processing.
-
----
 
 **UTF-8 (Unicode Transformation Format - 8-bit)**
 
@@ -1165,74 +1148,64 @@ In modern computing, ASCII is often extended to 8-bit encodings (like **UTF-8**)
 
 **Key Points About UTF-8:**
 
-- **Unicode Standard**:
-  - Unicode is a universal character encoding standard that aims to include every character from every writing system in the world. It provides a unique code point for every character, symbol, or glyph, regardless of platform, program, or language.
-  - UTF-8 is one of the most commonly used ways to encode Unicode characters.
-
-- **8-bit Encoding**:
-  - UTF-8 uses 8-bit blocks (1 byte) for encoding characters, but it is a variable-length encoding system. This means that some characters take 1 byte, while others can take 2, 3, or even 4 bytes to encode, depending on the character.
-  - It was designed to be backward-compatible with ASCII. ASCII characters (which are in the range 0 to 127) are encoded using just 1 byte in UTF-8, making UTF-8 compatible with systems that expect ASCII.
-
-- **Variable-Length Encoding**:
-  - In UTF-8, the number of bytes used for a character depends on the character's code point in Unicode:
-    - 1 byte (7 bits) for characters in the ASCII range (0–127).
-    - 2 bytes (11 bits) for characters from the extended ASCII range.
-    - 3 bytes for most common characters (like accented characters and many scripts).
-    - 4 bytes for less common characters (e.g., some emoji, ancient scripts).
-
-- **Efficient and Flexible**:
-  - UTF-8 is efficient for text in English (or languages that use characters in the ASCII range) because it only requires 1 byte for those characters.
-  - It is also capable of encoding all the characters in the Unicode standard, including non-Latin scripts, emojis, symbols, and even ancient languages.
+-   **Unicode Standard**:
+    -   Unicode is a universal character encoding standard that aims to include every character from every writing system in the world. It provides a unique code point for every character, symbol, or glyph, regardless of platform, program, or language.
+    -   UTF-8 is one of the most commonly used ways to encode Unicode characters.
+-   **8-bit Encoding**:
+    -   UTF-8 uses 8-bit blocks (1 byte) for encoding characters, but it is a variable-length encoding system. This means that some characters take 1 byte, while others can take 2, 3, or even 4 bytes to encode, depending on the character.
+    -   It was designed to be backward-compatible with ASCII. ASCII characters (which are in the range 0 to 127) are encoded using just 1 byte in UTF-8, making UTF-8 compatible with systems that expect ASCII.
+-   **Variable-Length Encoding**:
+    -   In UTF-8, the number of bytes used for a character depends on the character's code point in Unicode:
+        -   1 byte (7 bits) for characters in the ASCII range (0–127).
+        -   2 bytes (11 bits) for characters from the extended ASCII range.
+        -   3 bytes for most common characters (like accented characters and many scripts).
+        -   4 bytes for less common characters (e.g., some emoji, ancient scripts).
+-   **Efficient and Flexible**:
+    -   UTF-8 is efficient for text in English (or languages that use characters in the ASCII range) because it only requires 1 byte for those characters.
+    -   It is also capable of encoding all the characters in the Unicode standard, including non-Latin scripts, emojis, symbols, and even ancient languages.
 
 **Why UTF-8 is Popular:**
 
-- **Compatibility with ASCII**: Since UTF-8 is compatible with ASCII for characters in the 0–127 range, it's easy to integrate into systems that were originally built to handle only ASCII.
-- **Compact**: It’s relatively compact for languages that mainly use ASCII characters (like English), while still being able to handle any character in the world.
-- **Widely Used**: UTF-8 is the default encoding in many programming languages, web technologies (like HTML and JSON), and databases.
+-   **Compatibility with ASCII**: Since UTF-8 is compatible with ASCII for characters in the 0–127 range, it's easy to integrate into systems that were originally built to handle only ASCII.
+-   **Compact**: It’s relatively compact for languages that mainly use ASCII characters (like English), while still being able to handle any character in the world.
+-   **Widely Used**: UTF-8 is the default encoding in many programming languages, web technologies (like HTML and JSON), and databases.
 
 **Examples of UTF-8 Encoding:**
 
-- The character **'A'** has a Unicode code point of **U+0041**. In UTF-8, it is represented by a single byte:
-  - `41` (hexadecimal) = `'A'`
-
-- The character **'€'** (Euro symbol) has a Unicode code point of **U+20AC**. In UTF-8, it is represented by three bytes:
-  - `E2 82 AC` (hexadecimal) = `'€'`
-
-- The character **'𐍈'** (an ancient Gothic letter) has a Unicode code point of **U+10348**. In UTF-8, it is represented by four bytes:
-  - `F0 90 8D 88` (hexadecimal) = `'𐍈'`
+-   The character **'A'** has a Unicode code point of **U+0041**. In UTF-8, it is represented by a single byte:
+    -   `41` (hexadecimal) = `'A'`
+-   The character **'€'** (Euro symbol) has a Unicode code point of **U+20AC**. In UTF-8, it is represented by three bytes:
+    -   `E2 82 AC` (hexadecimal) = `'€'`
+-   The character **'𐍈'** (an ancient Gothic letter) has a Unicode code point of **U+10348**. In UTF-8, it is represented by four bytes:
+    -   `F0 90 8D 88` (hexadecimal) = `'𐍈'`
 
 **Summary of UTF-8:**
 
-- **Variable-length encoding**: UTF-8 can use 1 to 4 bytes per character.
-- **Compatibility with ASCII**: For characters in the ASCII range (0–127), UTF-8 is identical to ASCII.
-- **Universal support**: UTF-8 can encode every character in the Unicode standard.
-- **Efficient and flexible**: It efficiently handles characters of different scripts and symbols while being compact for English text.
-
----
+-   **Variable-length encoding**: UTF-8 can use 1 to 4 bytes per character.
+-   **Compatibility with ASCII**: For characters in the ASCII range (0–127), UTF-8 is identical to ASCII.
+-   **Universal support**: UTF-8 can encode every character in the Unicode standard.
+-   **Efficient and flexible**: It efficiently handles characters of different scripts and symbols while being compact for English text.
 
 **Differences Between ASCII and UTF-8:**
 
-| Feature               | ASCII                              | UTF-8                                      |
-|-----------------------|------------------------------------|--------------------------------------------|
-| **Character Range**    | Limited to 128 characters (0–127)  | Supports over 1.1 million characters       |
-| **Encoding**           | 7-bit encoding                     | Variable-length (1 to 4 bytes per character)|
-| **Compatibility**      | Primarily used for English text    | Compatible with ASCII and supports many languages |
-| **Character Support**  | Only English letters, digits, punctuation, and control characters | Supports a wide variety of characters from all languages, emojis, and symbols |
-| **Efficiency**         | Efficient for English-only text    | Efficient for ASCII text but flexible enough to handle all characters worldwide |
-| **Legacy**             | Older standard, widely used in early computing | The most widely used encoding today, particularly for web and applications |
-
----
+| Feature | ASCII | UTF-8 |
+|------------------|-------------------------|------------------------------|
+| **Character Range** | Limited to 128 characters (0–127) | Supports over 1.1 million characters |
+| **Encoding** | 7-bit encoding | Variable-length (1 to 4 bytes per character) |
+| **Compatibility** | Primarily used for English text | Compatible with ASCII and supports many languages |
+| **Character Support** | Only English letters, digits, punctuation, and control characters | Supports a wide variety of characters from all languages, emojis, and symbols |
+| **Efficiency** | Efficient for English-only text | Efficient for ASCII text but flexible enough to handle all characters worldwide |
+| **Legacy** | Older standard, widely used in early computing | The most widely used encoding today, particularly for web and applications |
 
 **Similarities Between ASCII and UTF-8:**
 
-- **Basic Compatibility**: UTF-8 is fully compatible with ASCII for characters in the range 0–127 (the standard ASCII range).
-- **Standardized Encoding**: Both are standardized character encodings designed to facilitate the representation of text.
-- **Character Representation**: Both ASCII and UTF-8 represent characters as numeric codes (ASCII for 0–127, UTF-8 for all Unicode characters).
-- **Control Characters**: Both ASCII and UTF-8 include control characters for text formatting and processing (e.g., line breaks, tabs).
+-   **Basic Compatibility**: UTF-8 is fully compatible with ASCII for characters in the range 0–127 (the standard ASCII range).
+-   **Standardized Encoding**: Both are standardized character encodings designed to facilitate the representation of text.
+-   **Character Representation**: Both ASCII and UTF-8 represent characters as numeric codes (ASCII for 0–127, UTF-8 for all Unicode characters).
+-   **Control Characters**: Both ASCII and UTF-8 include control characters for text formatting and processing (e.g., line breaks, tabs).
 :::
 
-
-
+:::::::: {.callout-caution collapse="true"}
 ## Indexing and Slicing in Python
 
 In Python, indexing and slicing are used to access elements from sequence data types such as:
@@ -1297,6 +1270,7 @@ print(text[10])  # IndexError
 -   Indexing returns only one element
 :::
 
+::: callout-tip
 ## Slicing in Python
 
 **What is Slicing?**: Slicing is used to extract a portion (sub-sequence) from a sequence.
@@ -1355,7 +1329,9 @@ print(text[::-1])  # nohtyP
 ```
 
 This works for strings, lists, and tuples.
+:::
 
+::: callout-tip
 ### Indexing vs Slicing
 
 | Feature        | Indexing         | Slicing                        |
@@ -1364,7 +1340,9 @@ This works for strings, lists, and tuples.
 | Output         | One value        | Sub-sequence                   |
 | Syntax         | `seq[index]`     | `seq[start:stop:step]`         |
 | Error possible | Yes (IndexError) | No (safe even if out of range) |
+:::
 
+::: callout-tip
 ### Indexing and Slicing with Lists
 
 ```{python}
@@ -1374,6 +1352,7 @@ print(data[2])      # 30
 print(data[1:4])    # [20, 30, 40]
 print(data[::-1])   # [50, 40, 30, 20, 10]
 ```
+:::
 
 ::: callout-tip
 ## Key Points for Learners
@@ -1386,3 +1365,232 @@ print(data[::-1])   # [50, 40, 30, 20, 10]
 :::
 
 > Indexing gives one element, slicing gives many elements.
+:::
+
+## Basic operations
+
+Basic operations are the fundamental actions performed on data types such as numbers, strings, lists, sets, and dictionaries.
+
+### Arithmetic Operations
+
+Used with numeric types (`int`, `float`).
+
+| Operator | Meaning        | Example  |
+| -------- | -------------- | -------- |
+| `+`      | Addition       | `5 + 2`  |
+| `-`      | Subtraction    | `5 - 2`  |
+| `*`      | Multiplication | `5 * 2`  |
+| `/`      | Division       | `5 / 2`  |
+| `//`     | Floor Division | `5 // 2` |
+| `%`      | Modulus        | `5 % 2`  |
+| `**`     | Exponent       | `5 ** 2` |
+
+
+**Examples**
+
+```{python}
+a = 10
+b = 3
+
+a + b    # 13
+a / b    # 3.3333
+a // b   # 3
+a % b    # 1
+a ** b   # 1000
+```
+
+### Comparison (Relational) Operations
+
+Used to compare values. Result is `True` or `False`.
+
+| Operator | Meaning          |
+| -------- | ---------------- |
+| `==`     | Equal            |
+| `!=`     | Not equal        |
+| `>`      | Greater than     |
+| `<`      | Less than        |
+| `>=`     | Greater or equal |
+| `<=`     | Less or equal    |
+
+**Examples**
+
+```{python}
+5 == 5     # True
+10 > 3     # True
+7 != 2     # True
+```
+
+### Logical Operations
+
+Used with Boolean values.
+
+| Operator | Meaning              |
+| -------- | -------------------- |
+| `and`    | Both conditions true |
+| `or`     | At least one true    |
+| `not`    | Reverses condition   |
+
+
+**Examples**
+
+```{python}
+True and False   # False
+True or False    # True
+not True         # False
+
+## Example with conditions:
+
+age = 20
+age > 18 and age < 30   # True
+```
+
+### Assignment Operations
+
+Used to assign values.
+
+| Operator | Example  | Equivalent To |
+| -------- | -------- | ------------- |
+| `=`      | `x = 5`  | Assign        |
+| `+=`     | `x += 2` | `x = x + 2`   |
+| `-=`     | `x -= 2` | `x = x - 2`   |
+| `*=`     | `x *= 2` | `x = x * 2`   |
+| `/=`     | `x /= 2` | `x = x / 2`   |
+
+**Example**
+
+```{python}
+x = 5
+x += 3   # 8
+```
+
+### Membership Operations
+
+Used to check if value exists in a sequence.
+
+| Operator | Meaning     |
+| -------- | ----------- |
+| `in`     | Present     |
+| `not in` | Not present |
+
+**Examples**
+
+```{python}
+3 in [1,2,3]          # True
+"a" in "apple"        # True
+5 not in [1,2,3]      # True
+```
+
+### Identity Operations
+
+Used to compare memory location.
+
+| Operator | Meaning          |
+| -------- | ---------------- |
+| `is`     | Same object      |
+| `is not` | Different object |
+
+**Examples**
+
+```{python}
+a = [1,2]
+b = a
+c = [1,2]
+
+a is b    # True
+a is c    # False
+```
+
+### String Operations
+
+```{python}
+# 1. Concatenation
+
+"Hello" + " World"
+
+
+# 2. Repetition
+
+"Hi" * 3   # "HiHiHi"
+
+# Membership
+
+"e" in "hello"   # True
+
+```
+
+### List Operations
+
+```{python}
+# 1. Concatenation
+
+[1,2] + [3,4]
+
+# 2. Repetition
+
+[0] * 4
+
+# 3. Length
+
+len([1,2,3])   # 3
+
+```
+
+### Set Operations
+
+```{python}
+A = {1,2,3}
+B = {3,4,5}
+
+A | B   # Union
+A & B   # Intersection
+A - B   # Difference
+```
+
+### Dictionary Operations
+
+```{python}
+# 1. Access
+
+d = {"a":1}
+d["a"]
+
+# 2. Add/Update
+d["b"] = 2
+
+# 3. Membership (checks keys)
+
+"a" in d
+
+```
+
+### Built-in Functions Commonly Used
+
+| Function   | Meaning       |
+| ---------- | ------------- |
+| `len()`    | Length        |
+| `type()`   | Data type     |
+| `sum()`    | Sum of values |
+| `min()`    | Minimum       |
+| `max()`    | Maximum       |
+| `sorted()` | Sort values   |
+
+
+**Examples**
+
+```{python}
+nums = [1,5,2]
+len(nums)
+sum(nums)
+sorted(nums)
+```
+
+### Conclusion
+
+Basic operations form the foundation of Python programming. Mastering them is essential before moving to:
+
+- Control flow (if, for, while)
+- Functions
+- Object-Oriented Programming
+- File handling
+
+

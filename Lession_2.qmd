@@ -1,5 +1,5 @@
 ---
-title: "Day 2: Python Data Types & Variables"
+title: "Lession 2: Python Data Types & Variables"
 editor: visual
 ---
 
@@ -1189,7 +1189,7 @@ In modern computing, ASCII is often extended to 8-bit encodings (like **UTF-8**)
 **Differences Between ASCII and UTF-8:**
 
 | Feature | ASCII | UTF-8 |
-|------------------|-------------------------|------------------------------|
+|------------------|-------------------------|-----------------------------|
 | **Character Range** | Limited to 128 characters (0–127) | Supports over 1.1 million characters |
 | **Encoding** | 7-bit encoding | Variable-length (1 to 4 bytes per character) |
 | **Compatibility** | Primarily used for English text | Compatible with ASCII and supports many languages |
@@ -1205,7 +1205,7 @@ In modern computing, ASCII is often extended to 8-bit encodings (like **UTF-8**)
 -   **Control Characters**: Both ASCII and UTF-8 include control characters for text formatting and processing (e.g., line breaks, tabs).
 :::
 
-:::::::: {.callout-caution collapse="true"}
+::: {.callout-caution collapse="true"}
 ## Indexing and Slicing in Python
 
 In Python, indexing and slicing are used to access elements from sequence data types such as:
@@ -1257,6 +1257,9 @@ print(numbers[1])   # 20
 print(numbers[-1])  # 40
 
 ```
+:::
+
+
 
 ::: callout-tip
 ## Important Notes on Indexing
@@ -1365,7 +1368,7 @@ print(data[::-1])   # [50, 40, 30, 20, 10]
 :::
 
 > Indexing gives one element, slicing gives many elements.
-:::
+::::::::
 
 ## Basic operations
 
@@ -1376,7 +1379,7 @@ Basic operations are the fundamental actions performed on data types such as num
 Used with numeric types (`int`, `float`).
 
 | Operator | Meaning        | Example  |
-| -------- | -------------- | -------- |
+|----------|----------------|----------|
 | `+`      | Addition       | `5 + 2`  |
 | `-`      | Subtraction    | `5 - 2`  |
 | `*`      | Multiplication | `5 * 2`  |
@@ -1384,7 +1387,6 @@ Used with numeric types (`int`, `float`).
 | `//`     | Floor Division | `5 // 2` |
 | `%`      | Modulus        | `5 % 2`  |
 | `**`     | Exponent       | `5 ** 2` |
-
 
 **Examples**
 
@@ -1404,7 +1406,7 @@ a ** b   # 1000
 Used to compare values. Result is `True` or `False`.
 
 | Operator | Meaning          |
-| -------- | ---------------- |
+|----------|------------------|
 | `==`     | Equal            |
 | `!=`     | Not equal        |
 | `>`      | Greater than     |
@@ -1425,11 +1427,10 @@ Used to compare values. Result is `True` or `False`.
 Used with Boolean values.
 
 | Operator | Meaning              |
-| -------- | -------------------- |
+|----------|----------------------|
 | `and`    | Both conditions true |
 | `or`     | At least one true    |
 | `not`    | Reverses condition   |
-
 
 **Examples**
 
@@ -1449,7 +1450,7 @@ age > 18 and age < 30   # True
 Used to assign values.
 
 | Operator | Example  | Equivalent To |
-| -------- | -------- | ------------- |
+|----------|----------|---------------|
 | `=`      | `x = 5`  | Assign        |
 | `+=`     | `x += 2` | `x = x + 2`   |
 | `-=`     | `x -= 2` | `x = x - 2`   |
@@ -1468,7 +1469,7 @@ x += 3   # 8
 Used to check if value exists in a sequence.
 
 | Operator | Meaning     |
-| -------- | ----------- |
+|----------|-------------|
 | `in`     | Present     |
 | `not in` | Not present |
 
@@ -1485,7 +1486,7 @@ Used to check if value exists in a sequence.
 Used to compare memory location.
 
 | Operator | Meaning          |
-| -------- | ---------------- |
+|----------|------------------|
 | `is`     | Same object      |
 | `is not` | Different object |
 
@@ -1566,14 +1567,13 @@ d["b"] = 2
 ### Built-in Functions Commonly Used
 
 | Function   | Meaning       |
-| ---------- | ------------- |
+|------------|---------------|
 | `len()`    | Length        |
 | `type()`   | Data type     |
 | `sum()`    | Sum of values |
 | `min()`    | Minimum       |
 | `max()`    | Maximum       |
 | `sorted()` | Sort values   |
-
 
 **Examples**
 
@@ -1588,9 +1588,7 @@ sorted(nums)
 
 Basic operations form the foundation of Python programming. Mastering them is essential before moving to:
 
-- Control flow (if, for, while)
-- Functions
-- Object-Oriented Programming
-- File handling
-
-
+-   Control flow (if, for, while)
+-   Functions
+-   Object-Oriented Programming
+-   File handling

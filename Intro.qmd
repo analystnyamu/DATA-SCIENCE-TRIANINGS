@@ -24,45 +24,45 @@ The notes are organized into **daily lectures**, designed for **online live sess
 
 ## Python Fundamentals & Data Handling
 
-### Day 1: Introduction to Python for Data Analysis
+### Lession 1: Introduction to Python for Data Analysis
 - Course onboarding and outline  
 - Python features  
 - Python ecosystem (Anaconda, Jupyter, libraries)  
 - Running basic Python commands  
 
-### Day 2: Python Data Types & Variables
+### Lession 2: Python Data Types & Variables
 - Numeric data types (`int`, `float`)  
 - Strings and booleans  
 - Variable assignment  
 - Basic operations  
 
-### Day 3: Control Flow & Logical Operations
+### Lession 3: Control Flow & Logical Operations
 - Conditional statements (`if`, `elif`, `else`)  
 - Loops (`for`, `while`)  
 - Logical operators  
 
-### Day 4: Functions & Debugging
+### Chapter 4: Functions & Debugging
 - Defining functions  
 - Function arguments and return values  
 - Basic debugging and error handling  
 
-### Day 5: Core Data Structures
+### Chapter 5: Core Data Structures
 - Lists, tuples, dictionaries, and sets  
 - Nested structures  
 - Choosing the right data structure  
 
-### Day 6: Working with Files & Simple Data Tasks
+### Chapter 6: Working with Files & Simple Data Tasks
 - Reading and writing CSV files  
 - Working with Excel files  
 - File paths and directories  
 - Basic data exploration  
 
-### Day 7: Introduction to NumPy
+### Chapter 7: Introduction to NumPy
 - NumPy arrays vs Python lists  
 - Vectorized operations  
 - Basic statistical functions  
 
-### Day 8: Introduction to Pandas & DataFrames
+### Chapter 8: Introduction to Pandas & DataFrames
 - Pandas Series and DataFrames  
 - Indexing, selection, and inspection  
 - Loading real-world datasets  

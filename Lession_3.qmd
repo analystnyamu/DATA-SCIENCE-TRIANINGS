@@ -1,0 +1,398 @@
+---
+title: "Lession 3: Control Flow & Logical Operations"
+editor: visual
+---
+
+::: callout-tip
+## Lesson Objectives
+
+By the end of this lesson, students should be able to:
+
+- Use `if`, `elif`, and `else` statements to make decisions in a program.
+- Apply logical operators (`and`, `or`, `not`) to combine conditions.
+- Write `for` loops to iterate over sequences.
+- Write `while` loops based on conditions.
+- Use `break`, `continue`, and `pass` to control loop execution.
+- Combine conditionals and loops to solve simple programming problems.
+:::
+
+Control flow determines how a program executes statements — in what order and under what conditions.
+
+By **default**, Python executes code sequentially **(top → bottom)**.
+Control flow allows us to:
+
+- Make decisions
+- Repeat actions
+- Combine conditions
+- Control program behavior
+
+
+### Conditional Statements (if, elif, else)
+
+Conditional statements allow a program to make decisions.
+
+🔹 **Basic Syntax**
+
+```{python}
+if condition:
+    statement
+```
+
+**Example*8
+
+```{python}
+age = 20
+
+if age >= 18:
+    print("You are an adult.")
+```
+
+> If the condition is True, the block executes.
+> If False, it is skipped.
+
+🔹 **if...else**: Used when there are two possible outcomes.
+
+```{python}
+age = 16
+
+if age >= 18:
+    print("Adult")
+else:
+    print("Minor")
+```
+
+🔹 **if...elif...else**: Used when there are multiple conditions.
+
+```{python}
+score = 75
+
+if score >= 80:
+    print("Grade A")
+elif score >= 70:
+    print("Grade B")
+elif score >= 60:
+    print("Grade C")
+else:
+    print("Fail")
+```
+
+::: callout-tip
+## Important Rules
+
+- Conditions are checked top to bottom
+- Only the first true condition executes
+- else is optional
+:::
+
+🔹 **Nested Conditionals**: This refer to placing one conditional statement (like if, elif, or else) inside another. This allows you to test multiple conditions in a hierarchical way, making decisions based on more specific or complex criteria.
+
+```{python}
+age = 20
+
+if age >= 18:
+    print("You are an adult.")
+    if age >= 21:
+        print("You can drink alcohol in the US.")
+    else:
+        print("You are not eligible to drink alcohol in the US.")
+else:
+    print("You are a minor.")
+```
+
+**Breakdown of the Example**
+
+- The first `if` checks if the person is an adult (18 or older).
+- Inside that `if`, there is another `if` (nested) that checks if the person is 21 or older, allowing them to drink alcohol in the US.
+- The `else` within the nested `if` handles the case where the person is 18 or older but not yet 21.
+
+**Why Use Nested Conditionals?**
+
+- **Handling Complex Decision-Making:** When multiple conditions need to be checked in a specific order.
+- **Breaking Down Problems:** Allows for more specific actions based on more detailed criteria.
+
+
+**Example with More Levels of Nesting:**
+
+```{python}
+day = "Saturday"
+weather = "rainy"
+
+if day == "Saturday":
+    print("It's the weekend!")
+    if weather == "sunny":
+        print("Perfect day for a picnic.")
+    elif weather == "rainy":
+        print("Maybe stay indoors and read a book.")
+    else:
+        print("Uncertain weather!")
+else:
+    print("It's a weekday, back to work!")
+```
+
+
+::: callout-tip
+## Key Points to Remember:
+
+- **Indentation** is important in Python (and most programming languages) for readability and determining the scope of conditionals.
+- **Nested conditionals** should be used carefully to avoid making the code overly complex or hard to follow.
+- Keep track of logic to ensure the correct conditions are being evaluated at the right times.
+:::
+
+
+🔹 **Short-hand (Ternary Operator)**: It is a compact way of writing a conditional statement in Python. It allows you to condense an if-else statement into a single line of code. This operator is often referred to as the ternary operator because it evaluates a condition and returns one of two values based on whether the condition is true or false.
+
+**Syntax**
+
+```{python}
+value_if_true if condition else value_if_false
+```
+
+**Breakdown:**
+
+- **condition:** The condition you want to evaluate.
+- **value_if_true:** The value returned if the condition is True.
+- **value_if_false:** The value returned if the condition is False.
+
+
+```{python}
+
+age = 20
+status = "Adult" if age >= 18 else "Minor"
+print(status)
+```
+
+::: {.callout-caution collapse="true"}
+## Explanation:
+
+The condition `age >= 18` is checked.
+
+- If True, it assigns `"Adult"` to the variable `status`.
+- If False, it assigns `"Minor"` to `status`.
+
+**Why Use the Ternary Operator?**
+
+- **Conciseness**: It makes the code more compact and easier to read when dealing with simple conditionals.
+- **Readability**: It can make the code cleaner and more readable for simple conditions.
+:::
+
+
+::: {.callout-caution collapse="true"}
+## Example with Nested Ternary Operator:
+
+You can even nest ternary operators within each other:
+
+```{pyrhon}
+age = 20
+status = "Adult" if age >= 18 else "Teen" if age >= 13 else "Child"
+print(status)
+```
+
+**In this example:**
+
+- If `age >= 18`, the result is `"Adult"`.
+- If not, it checks if `age >= 13`. If True, the result is `"Teen"`.
+- Otherwise, it returns `"Child"`.
+
+**When to Use Ternary Operators:**
+
+- Use them when you need a simple conditional assignment or decision, especially in cases where the condition is straightforward.
+- Avoid using ternary operators if they make the code harder to understand, such as in complex or nested conditions.
+:::
+
+
+### Logical Operators
+
+Logical operators combine multiple conditions.
+
+| Operator | Meaning                      |
+| -------- | ---------------------------- |
+| `and`    | Both conditions must be True |
+| `or`     | At least one must be True    |
+| `not`    | Reverses the condition       |
+
+🔹 *and** Operator
+
+```{python}
+age = 25
+citizen = True
+
+if age >= 18 and citizen:
+    print("Eligible to vote")  ## Both conditions must be True.
+```
+
+🔹 **or** Operator
+
+```{python}
+day = "Sunday"
+
+if day == "Saturday" or day == "Sunday":
+    print("Weekend")  ## At least one condition must be True.
+
+```
+
+🔹 **not** Operator
+
+```{python}
+logged_in = False
+
+if not logged_in:
+    print("Please log in")
+```
+
+::: {.callout-caution collapse="true"}
+## Truth** Tables
+
+`and`
+
+| A | B | A and B |
+| - | - | ------- |
+| T | T | T       |
+| T | F | F       |
+| F | T | F       |
+| F | F | F       |
+
+`or`
+
+| A | B | A or B |
+| - | - | ------ |
+| T | T | T      |
+| T | F | T      |
+| F | T | T      |
+| F | F | F      |
+
+:::
+
+
+### Loops in Python
+
+In Python, loops are used to execute a block of code repeatedly as long as a condition is met. There are two primary types of loops:
+
+- **For Loop**
+- **While Loop**
+
+Loops are essential for automating repetitive tasks and iterating through sequences (like lists, tuples, or strings).
+
+**1. For Loop**
+
+The `for` loop is used to iterate over a sequence (such as a list, tuple, string, or range). It repeats a block of code for each item in the sequence.
+
+```{python}
+for item in sequence:
+    # code to execute
+```
+
+- **item:** The variable that takes the value of each element in the sequence.
+- **sequence:** The sequence to iterate over (e.g., list, tuple, range).
+
+**Example of For Loop:**
+
+```{python}
+fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    print(fruit)
+```
+
+You can also use the range() function to iterate over a sequence of numbers.
+
+**Example with range():**
+
+```{python}
+for i in range(5):
+    print(i)
+```
+
+
+**2. While Loop**
+
+The while loop executes a block of code as long as a condition is True. It is useful when you don't know how many times you'll need to loop, but you know the condition that will stop the loop.
+
+**Syntax:**
+
+```{python}
+while condition:
+    # code to execute
+```
+
+- **`condition`:** An expression that is evaluated before each iteration. If it is `True`, the loop continues. If it is `False`, the loop stops.
+
+**Example of While Loop:**
+
+```{python}
+count = 0
+
+while count < 5:
+    print(count)
+    count += 1  # increment count by 1
+```
+
+**3. Control Statements in Loops**
+
+You can control the flow of loops using certain statements:
+
+**a. Break:**
+
+The `break` statement is used to exit the loop when a certain condition is met.
+
+**Example of `break`:**
+
+```{python}
+for i in range(10):
+    if i == 5:
+        break  # exit the loop when i is 5
+    print(i)
+```
+
+**b. Continue:**
+
+The `continue` statement is used to skip the current iteration and proceed to the next iteration of the loop.
+
+**Example of `continue`:**
+
+```{python}
+for i in range(5):
+    if i == 2:
+        continue  # skip the iteration when i is 2
+    print(i)
+```
+
+**c. Pass:**
+
+The `pass` statement is a placeholder that does nothing. It is used when a statement is required syntactically but you don’t want to write any code for that part yet.
+
+**Example of `pass`:**
+
+```{python}
+for i in range(5):
+    if i == 2:
+        pass  # do nothing
+    print(i)
+```
+
+**4. Combining Loops with Conditionals**
+
+You can combine loops with `if-else` statements to solve more complex problems.
+
+**Example of Combining Loops and Conditionals:**
+
+```{python}
+for i in range(1, 11):
+    if i % 2 == 0:
+        print(f"{i} is even")
+    else:
+        print(f"{i} is odd")
+```
+
+
+::: callout-tip
+## Key Points to Remember:
+
+- A **for loop** is used for iterating over sequences.
+- A **while loop** runs as long as the specified condition remains True.
+- `break` exits the loop, `continue` skips to the next iteration, and `pass` does nothing.
+- You can combine loops with conditionals to solve more complex problems.
+:::
+
+
+
+

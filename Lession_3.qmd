@@ -394,5 +394,177 @@ for i in range(1, 11):
 :::
 
 
+## Combining Conditionals and Loops to Solve Simple Programming Problems
+
+In programming, real-world problems are rarely solved by just repeating an action or just making a single decision. The real power of code emerges when we combine loops (for repetition) and conditionals (for decision-making) to process data intelligently.
+
+- 🔁 **Loops** provide the structure to handle large amounts of data or repeated tasks without writing the same code over and over.
+- 🔀 **Conditionals** provide the logic to analyze each piece of data or each step in the process, allowing the program to react differently under different circumstances.
+
+By nesting conditionals inside loops, we can filter, count, validate, and transform data in a controlled and efficient way.
+
+::: callout-tip
+## Why Combine Them? Common Problem-Solving Patterns
+
+Think of a loop as a conveyor belt carrying items (e.g., numbers, lines of text, user inputs). The conditional is an inspector standing next to the belt, examining each item and deciding what to do with it. This simple model allows us to solve many common types of problems:
+
+- **Filtering**: Examining a collection of items and only keeping (printing, storing) those that meet a specific condition.
+- **Counting**: Iterating through a collection and incrementing a counter only when a certain condition is met.
+- **Searching & Validation**: Looking through a collection to find a specific item or to check if all items meet a rule. This often involves stopping the loop early once a condition is found (`break`).
+- **Aggregation**: Performing a calculation (like a sum, product, or average) on a collection, but only including items that satisfy a condition.
+:::
 
 
+**Examples**
+
+Here are some classic examples that illustrate these patterns:
+
+**1. Filtering: Print Only Even Numbers**
+
+This example runs through a list of numbers (the loop) and decides to print only the ones that are even (the conditional).
+
+```{python}
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+print("Even numbers:")
+for num in numbers:      # <-- 🔁 Loop: Look at each number one by one
+    if num % 2 == 0:     # <-- 🔀 Conditional: Is this number even?
+        print(num)       #     Action: If yes, print it. If no, do nothing.
+# Output: 2, 4, 6, 8, 10
+
+```
+
+**2. Counting: How Many Students Passed?**
+
+Here, we count how many items in a list meet a specific criterion.
+
+```{python}
+grades = [85, 62, 90, 78, 45, 88, 91, 55]
+passing_grade = 65
+pass_count = 0
+
+for grade in grades:                 # 🔁 Loop: Check each grade
+    if grade >= passing_grade:        # 🔀 Conditional: Is it a passing grade?
+        pass_count = pass_count + 1   #     Action: If yes, increment the counter.
+
+print(f"Number of students who passed: {pass_count}")
+# Output: Number of students who passed: 6
+```
+
+**3. Searching & Validation: Check for Prime Numbers**
+
+This example combines loops in two ways. The outer loop iterates through a list of numbers. The inner loop (with its own conditionals) checks if each number is prime. We also use a `break` statement inside the inner loop for efficiency—as soon as we find a divisor, we know the number isn't prime and can stop checking.
+
+```{python}
+numbers_to_check = [4, 7, 10, 13, 15]
+
+for num in numbers_to_check:    # 🔁 Outer Loop: Examine each number in the list
+    if num <= 1:
+        is_prime = False
+    else:
+        is_prime = True          # Assume it's prime until we find a divisor
+        # 🔁 Inner Loop: Check for divisors from 2 up to half of the number
+        for i in range(2, (num // 2) + 1): # num // 2: This performs integer division, dividing num by 2 and rounding down to the nearest integer.
+            if num % i == 0:     # 🔀 Conditional: Is i a divisor?
+                is_prime = False
+                break            # 🛑 Exit inner loop early, no need to check further
+
+    if is_prime:                  # 🔀 Conditional based on the result
+        print(f"{num} is prime.")
+    else:
+        print(f"{num} is not prime.")
+```
+
+
+**4. User Input Validation: Keep Asking Until Valid**
+
+This is a very common pattern for making programs robust. We use a loop to keep asking for input, and a conditional to check if it's what we want. The loop only exits when the condition is satisfied.
+
+```{python}
+while True:                     # 🔁 Loop: Keep going indefinitely...
+    user_input = input("Please enter 'yes' or 'no': ")
+    if user_input == 'yes' or user_input == 'no':  # 🔀 Conditional: Is it valid?
+        print(f"Thank you for entering '{user_input}'.")
+        break                    # 🛑 Exit the loop! Valid input received.
+    else:
+        print("Invalid input. Try again.")  # Loop continues if invalid.
+```
+
+**5. Password checking program with 3 attempts**
+
+```{python}
+# Password checking program with 3 attempts
+
+# Set the correct password (in a real application, this would be stored securely)
+correct_password = "python123"
+max_attempts = 3
+attempts = 0
+
+print("=== Secure Login System ===")
+print(f"You have {max_attempts} attempts to enter the correct password.\n")
+
+# 🔁 Loop: Keep asking until max attempts reached or correct password entered
+while attempts < max_attempts:
+    # Ask for password input
+    entered_password = input(f"Attempt {attempts + 1}/{max_attempts} - Enter password: ")
+    
+    # 🔀 Conditional: Check if password is correct
+    if entered_password == correct_password:
+        print("\n✅ Access Granted! Welcome to the system.")
+        break  # 🛑 Exit the loop immediately - login successful
+    else:
+        attempts += 1  # Increment attempt counter
+        remaining = max_attempts - attempts
+        
+        # 🔀 Nested conditional: Provide different messages based on attempts left
+        if remaining > 0:
+            print(f"❌ Incorrect password. You have {remaining} attempt(s) left.\n")
+        else:
+            print("\n🚫 ACCESS BLOCKED! Too many failed attempts.")
+            print("Please contact the administrator or try again later.")
+
+# Program continues here after loop ends
+print("\n--- Login session ended ---")
+# How It Works:
+# - Variables setup: We store the correct password, set maximum attempts to 3, and initialize an attempt counter
+# - While loop: Continues as long as attempts are less than max_attempts (0, 1, 2)
+# - Conditional check: Compares entered password with correct password
+# - Success path: If correct, grant access and break out of loop
+# - Failure path: If wrong, increment attempts and show remaining attempts
+# - Block condition: On the 3rd wrong attempt, the loop condition fails and we show the blocked message
+```
+
+**Alternative Version (Using For Loop):**
+
+```{python}
+# Alternative implementation using a for loop
+correct_password = "python123"
+max_attempts = 3
+
+print("=== Secure Login System ===\n")
+
+# 🔁 For loop with fixed number of attempts
+for attempt in range(1, max_attempts + 1):
+    entered_password = input(f"Attempt {attempt}/{max_attempts} - Enter password: ")
+    
+    # 🔀 Conditional check
+    if entered_password == correct_password:
+        print("\n✅ Access Granted! Welcome.")
+        break  # Success - exit loop
+    elif attempt < max_attempts:
+        print(f"❌ Incorrect. You have {max_attempts - attempt} attempt(s) left.\n")
+    else:
+        print("\n🚫 ACCESS BLOCKED! Maximum attempts exceeded.")
+        print("Account temporarily locked for security.")
+
+print("\n--- Login session ended ---")
+```
+
+
+::: callout-tip
+## Key Takeaways
+
+- **Synergy:** Loops provide the scope (e.g., every element in a list), and conditionals provide the focus (e.g., elements that are even).
+- **Problem-Solving Toolkit**: The patterns of filtering, counting, searching, and validating are fundamental building blocks for almost any program you will write.
+- **Control Flow:** Mastering the combination of loops and conditionals is essential for directing the flow of your program in a logical and efficient way to solve complex problems.
+:::

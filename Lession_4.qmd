@@ -1,0 +1,180 @@
+---
+title: "Lesson 4: Functions & Debugging"
+editor: visual
+---
+
+## Introduction
+
+Functions are reusable blocks of code that perform specific tasks. They help us organize code, avoid repetition, and make programs more manageable. Debugging is the process of finding and fixing errors in our code.
+
+::: callout-tip
+## Learning Objectives
+
+- **Understand how to define and call functions with parameters and return values**  
+  Learn how to create functions that can accept input values (parameters) and return output values (return statements).
+
+- **Learn to create reusable code blocks that accept inputs and produce outputs**  
+  Understand how functions can be used to organize and reuse code efficiently.
+
+- **Identify common programming errors and apply debugging techniques**  
+  Recognize and address common mistakes in programming, such as syntax errors, logical errors, and runtime errors, using debugging tools and techniques.
+
+- **Implement error handling using try/except blocks to prevent crashes**  
+  Use try/except blocks to catch errors and handle them gracefully, preventing your program from crashing unexpectedly.
+
+- **Write modular, organized code by breaking problems into smaller functions**  
+  Learn to divide complex problems into smaller, manageable functions that can be independently tested and reused.
+:::
+
+
+### Part 1: Defining Functions
+
+**What is a Function?**: A function is like a mini-program within your program. It takes inputs, performs actions, and optionally returns outputs.
+
+**Syntax for Defining a Function**
+
+In Python, functions are defined using the `def` keyword, followed by the function name and parameters (optional). Then, the body of the function follows, indented:
+
+```{python}
+def function_name(parameter1, parameter2):
+    # Function body
+    # Code to execute
+    return result
+```
+
+::: callout-tip
+## Function Components:
+
+- **`def` keyword**: Tells Python you're defining a function.
+- **Function name**: Should be descriptive (use lowercase with underscores). For example, `calculate_area` or `print_message`.
+- **Parentheses `()`**: Can contain parameters, which are the inputs the function will accept. If no parameters are needed, you can leave them empty.
+- **Colon `:`**: Marks the start of the function body, indicating that the following indented block contains the function's code.
+- **Indented block**: The code that runs when the function is called. Everything within the indentation after the colon is part of the function body and will execute.
+:::
+
+::: {.callout-caution collapse="true"}
+## Examples:
+
+```{python}
+
+# 1.
+
+def greet():
+    print("Hello, welcome!")
+
+greet() # greet() → calls (executes) the function
+
+# 2. 
+  
+  def calculate_area(radius):
+    area = 3.14 * radius ** 2
+    return area
+  
+# 3.  Multiple Statements:
+
+def show_menu():
+    """Display the main menu options"""  # This is a docstring
+    print("=" * 30)
+    print("      MAIN MENU")
+    print("=" * 30)
+    print("1. Start Game")
+    print("2. Load Game")
+    print("3. Settings")
+    print("4. Exit")
+    print("=" * 30)
+
+# Using the function
+show_menu()
+```
+:::
+
+
+**Example of Defining a Function**
+
+Here’s a simple function that takes two numbers as input and returns their sum:
+
+```{python}
+def add_numbers(a, b):
+    result = a + b
+    return result
+```
+
+- `add_numbers` is the function name.
+- `a` and `b` are the parameters (input values).
+- The function calculates the sum of a and b and returns the result.
+
+**Calling a Function**
+
+To use a function after defining it, you "call" it by specifying the function name and passing the required arguments (if any):
+
+```{python}
+sum = add_numbers(5, 3)  # Calling the function with arguments 5 and 3
+print(sum)  # Output: 8
+
+```
+
+
+### Part 2: Function Arguments and Return Values
+
+**Function Arguments**
+
+Arguments (or parameters) are the values you pass into a function when calling it. They allow you to provide dynamic input to your function.
+
+### Types of Function Arguments:
+
+**i) Positional Arguments**: The most basic type, where the order of arguments matters. The function assigns the value to the parameter based on the position of the argument.
+
+**Example:**
+
+```{python}
+def greet(name, age):
+    print(f"Hello {name}, you are {age} years old.")
+
+greet("Alice", 25)  # Positional arguments
+```
+
+- **ii) Keyword Arguments:** Allows you to specify which value goes to which parameter by name, making the order irrelevant.
+
+```{python}
+greet(age=25, name="Alice")  # Keyword arguments
+```
+
+- **iii) Default Arguments**: You can specify default values for parameters, so if the argument is not passed when calling the function, the default value is use
+
+```{python}
+def greet(name="Guest", age=30):
+    print(f"Hello {name}, you are {age} years old.")
+
+greet()  # Uses default values
+greet("Bob")  # Uses default age
+```
+
+**iv) Variable-length Arguments**:
+
+- `*args` allows you to pass a variable number of positional arguments.
+- `**kwargs` allows you to pass a variable number of keyword arguments.
+
+**Example of `*args`:**
+
+```{python}
+def print_numbers(*args):
+    for num in args:
+        print(num)
+
+print_numbers(1, 2, 3, 4)  # Outputs each number
+```
+
+**Example** of `**kwargs`:
+
+```{python}
+def print_info(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+print_info(name="Alice", age=25)  # Outputs name and age
+```
+
+**Return Values**
+
+A function can return a result to the caller using the return statement. Once return is executed, the function ends and no further code inside it is executed.
+

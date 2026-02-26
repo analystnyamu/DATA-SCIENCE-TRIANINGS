@@ -4,7 +4,7 @@ editor: visual
 ---
 
 ::: callout-tip
-## Lesson Objectives
+## Learning Objectives
 
 By the end of this lesson, students should be able to:
 

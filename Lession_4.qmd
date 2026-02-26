@@ -176,5 +176,309 @@ print_info(name="Alice", age=25)  # Outputs name and age
 
 **Return Values**
 
-A function can return a result to the caller using the return statement. Once return is executed, the function ends and no further code inside it is executed.
+A function can return a result to the caller using the `return` statement. Once `return` is executed, the function ends and no further code inside it is executed.
 
+```{python}
+def multiply(x, y):
+    return x * y
+
+result = multiply(4, 5)
+print(result) 
+
+```
+
+- If no return statement is present, the function returns None by default.
+
+::: {.callout-caution collapse="true"}
+## More examples using Return Values
+
+**Multiple Return Values:**
+
+```{python}
+def get_min_max(numbers):
+    """Return both minimum and maximum from a list"""
+    minimum = min(numbers)
+    maximum = max(numbers)
+    return minimum, maximum  # Returns a tuple
+
+# Unpack the returned values
+data = [45, 12, 78, 34, 90]
+lowest, highest = get_min_max(data)
+print(f"Lowest: {lowest}, Highest: {highest}")
+# Output: Lowest: 12, Highest: 90
+```
+
+**Conditional Returns:**
+
+```{python}
+def check_even_odd(number):
+    """Return 'even' or 'odd' based on the number"""
+    if number % 2 == 0:
+        return "even"
+    else:
+        return "odd"
+
+# Using the function
+for num in [1, 2, 3, 4, 5]:
+    result = check_even_odd(num)
+    print(f"{num} is {result}")
+```
+
+**Early Returns:**
+
+```{python}
+
+def divide_numbers(a, b):
+    """Safe division with error checking"""
+    if b == 0:
+        return "Error: Cannot divide by zero!"  # Early return
+    return a / b  # Only runs if b is not zero
+
+print(divide_numbers(10, 2))   # Output: 5.0
+print(divide_numbers(10, 0))   # Output: Error: Cannot divide by zero!
+```
+:::
+
+
+::: {.callout-caution collapse="true"}
+## Practical Examples
+
+**Example 1: Temperature Converter**
+
+```{python}
+def celsius_to_fahrenheit(celsius):
+    """Convert Celsius to Fahrenheit"""
+    fahrenheit = (celsius * 9/5) + 32
+    return fahrenheit
+
+def fahrenheit_to_celsius(fahrenheit):
+    """Convert Fahrenheit to Celsius"""
+    celsius = (fahrenheit - 32) * 5/9
+    return round(celsius, 1)  # Round to 1 decimal place
+
+# Using the functions
+temp_c = 25
+temp_f = celsius_to_fahrenheit(temp_c)
+print(f"{temp_c}°C is {temp_f}°F")
+
+temp_f = 77
+temp_c = fahrenheit_to_celsius(temp_f)
+print(f"{temp_f}°F is {temp_c}°C")
+```
+
+**Example 2: Grade Calculator**
+
+```{python}
+
+def calculate_grade(score, max_score=100):
+    """Calculate letter grade based on percentage"""
+    percentage = (score / max_score) * 100
+    
+    if percentage >= 90:
+        return "A"
+    elif percentage >= 80:
+        return "B"
+    elif percentage >= 70:
+        return "C"
+    elif percentage >= 60:
+        return "D"
+    else:
+        return "F"
+
+def print_grade_report(student_name, score):
+    """Print formatted grade report"""
+    grade = calculate_grade(score)
+    print(f"Student: {student_name}")
+    print(f"Score: {score}")
+    print(f"Grade: {grade}")
+    print("-" * 20)
+
+# Test the functions
+print_grade_report("Alice", 95)   # Grade: A
+print_grade_report("Bob", 82)      # Grade: B
+print_grade_report("Charlie", 58)  # Grade: F
+```
+
+### Part 3: Basic Debugging and Error Handling
+
+::: callout-tip
+## Types of Errors
+
+**Syntax Errors (Parsing Errors)**: These errors occur when the Python interpreter can't parse the code because it doesn't follow proper syntax.
+
+```{python}
+# ❌ Wrong - missing colon
+def my_function()  
+    print("Hello")
+
+# ❌ Wrong - mismatched quotes
+print("Hello)
+
+# ✅ Correct
+def my_function():
+    print("Hello")
+
+```
+
+**Runtime Errors (Exceptions)**: These errors occur during program execution. For example, dividing by zero or accessing a list index that doesn’t exist.
+
+```{python}
+
+# ZeroDivisionError
+# print(10 / 0)  # Would cause error
+
+# NameError
+# print(undefined_variable)  # Would cause error
+
+# TypeError
+# print("5" + 5)  # Would cause error
+
+# ValueError
+# int("abc")  # Would cause error
+```
+
+**Logical Errors (Bugs)**: These are the hardest to detect. The code runs without errors, but the output is not what you expect.
+
+```{python}
+def calculate_average(numbers):
+    """Find the bug!"""
+    total = 0
+    count = 0
+    for num in numbers:
+        total = total + num
+        count = count + 1
+    # Bug: Forgot to divide! 
+    return total  # Should be total / count
+
+# This will give wrong result but no error message
+avg = calculate_average([10, 20, 30])
+print(f"Average is: {avg}")  # Wrong: 60, Correct: 20
+
+```
+:::
+
+
+::: callout-tip
+## Debugging Techniques
+
+**Technique 1: Print Statements**: One of the simplest ways to debug is by printing values at different points in the program to trace its execution.
+
+```{python}
+def complex_calculation(x, y):
+    """Debug with print statements"""
+    print(f"Debug: Input x={x}, y={y}")
+    
+    step1 = x + y
+    print(f"Debug: After step1 = {step1}")
+    
+    step2 = step1 * 2
+    print(f"Debug: After step2 = {step2}")
+    
+    step3 = step2 / y
+    print(f"Debug: After step3 = {step3}")
+    
+    return step3
+
+result = complex_calculation(10, 5)
+print(f"Final result: {result}")
+```
+
+**Technique 2: Using f-strings for Debugging**
+
+```{python}
+def process_user_data(name, age, scores):
+    """Debug with formatted output"""
+    print(f"🔍 DEBUG: Processing {name}, age {age}")
+    print(f"🔍 DEBUG: Scores: {scores}")
+    
+    if age < 0:
+        print(f"⚠️ WARNING: Negative age detected: {age}")
+    
+    avg_score = sum(scores) / len(scores) if scores else 0
+    print(f"🔍 DEBUG: Average score = {avg_score}")
+    
+    return avg_score
+
+# Test with various inputs
+process_user_data("Alice", 25, [85, 90, 78])
+process_user_data("Bob", -5, [70, 65])  # Will show warning
+
+```
+
+**Technique 3: Assertions**
+
+```{python}
+def withdraw_money(balance, amount):
+    """Safely withdraw money with assertions"""
+    # Assertions check for conditions that should always be true
+    assert balance >= 0, f"Balance cannot be negative: {balance}"
+    assert amount > 0, f"Withdrawal amount must be positive: {amount}"
+    
+    if amount <= balance:
+        new_balance = balance - amount
+        print(f"Withdrawal successful. New balance: ${new_balance}")
+        return new_balance
+    else:
+        print("Insufficient funds!")
+        return balance
+
+# Test the function
+wallet = 100
+wallet = withdraw_money(wallet, 30)   # Works fine
+# wallet = withdraw_money(wallet, -10)  # Would trigger assertion error
+```
+
+**Using a Debugger:** Python has a built-in debugger called `pdb`. You can use it to step through your code and inspect variables line by line.
+
+```{python}
+import pdb
+
+def add_numbers(a, b):
+    pdb.set_trace()  # Pauses execution here
+    return a + b
+
+add_numbers(5, 3)
+```
+
+
+
+**Using `pdb` for Debugging**
+
+When the program hits `pdb.set_trace()`, it pauses, allowing you to enter commands like:
+
+- `n` (next): Move to the next line of code.
+- `s` (step): Step into a function call.
+- `p` (print): Print the value of a variable or expression.
+
+
+
+```{python}
+try:
+    num = int(input("Enter a number: "))
+    result = 10 / num
+except ValueError:
+    print("Invalid input! Please enter a valid number.")
+except ZeroDivisionError:
+    print("Cannot divide by zero.")
+finally:
+    print("Execution finished.")
+```
+
+
+Here:
+
+ValueError handles invalid input (e.g., if the user enters text instead of a number).
+
+ZeroDivisionError handles division by zero.
+
+finally always runs, whether or not an error occurred.
+
+Summary
+
+Functions: Blocks of code designed to perform specific tasks. They help avoid redundancy and increase modularity. You can define functions with parameters and return values, allowing for flexible and reusable code.
+
+Function Arguments & Return Values: Functions can accept input through arguments and provide output via return values. Arguments can be positional, keyword, or variable-length. Functions can return values to be used later in the program.
+
+Debugging: Debugging helps you identify and fix errors in your program. You can use techniques like print statements, the built-in debugger (pdb), or your IDE's debugger to find and fix bugs.
+
+Error Handling: Using try and except blocks helps manage runtime errors gracefully, ensuring the program continues to run or provides useful error messages.

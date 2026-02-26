@@ -41,7 +41,7 @@ The notes are organized into **daily lectures**, designed for **online live sess
 - Loops (`for`, `while`)  
 - Logical operators  
 
-### Chapter 4: Functions & Debugging
+### Lession 4: Functions & Debugging
 - Defining functions  
 - Function arguments and return values  
 - Basic debugging and error handling  

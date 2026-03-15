@@ -24,24 +24,24 @@ The notes are organized into **daily lectures**, designed for **online live sess
 
 ## Python Fundamentals & Data Handling
 
-### Lession 1: Introduction to Python for Data Analysis
+### Chapter 1: Introduction to Python for Data Analysis
 - Course onboarding and outline  
 - Python features  
 - Python ecosystem (Anaconda, Jupyter, libraries)  
 - Running basic Python commands  
 
-### Lession 2: Python Data Types & Variables
+### Chapter 2: Python Data Types & Variables
 - Numeric data types (`int`, `float`)  
 - Strings and booleans  
 - Variable assignment  
 - Basic operations  
 
-### Lession 3: Control Flow & Logical Operations
+### Chapter 3: Control Flow & Logical Operations
 - Conditional statements (`if`, `elif`, `else`)  
 - Loops (`for`, `while`)  
 - Logical operators  
 
-### Lession 4: Functions & Debugging
+### Chapter 4: Functions & Debugging
 - Defining functions  
 - Function arguments and return values  
 - Basic debugging and error handling  

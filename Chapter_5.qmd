@@ -1,170 +1,34 @@
 ---
-title: "Lession 2: Python Data Types & Variables"
+title: "Chapter 5: Core Data Structures"
+format: html
 editor: visual
 ---
 
 ## Introduction
 
-In this session, we focus on **how Python stores and works with data**.\
-Understanding data types and variables is essential because **all data analysis tasks depend on correctly handling data values**.
+Data structures are ways of organizing and storing data so that it can be accessed and used efficiently. Python provides several built-in data structures that make it easy to store and manipulate collections of data.
+
+The most common core data structures in Python are:
+
+-   **Lists**
+-   **Tuples**
+-   **Dictionaries**
+-   **Sets**
+
+Each structure has different properties and is used for different purposes.
 
 ::: callout-tip
 ## Learning Objectives
 
-By the end of this lesson, learners will be able to:
+After studying this lession, you should be able to:
 
--   Identify common Python data types
--   Assign values to variables
--   Perform basic operations on different data types
+-   **Identify and describe Python’s core data structures**: lists, tuples, dictionaries, and sets.
+-   **Create and manipulate these data structures** to store and organize data effectively.
+-   **Explain the differences** between the four core data structures.
+-   **Work with nested data structures**, such as lists inside lists or dictionaries inside dictionaries.
+-   **Access and modify elements** within different data structures using indexing or keys.
+-   **Choose the appropriate data structure** based on the type of data and the problem being solved.
 :::
-
-------------------------------------------------------------------------
-
-## Variables and Assignment in Python
-
-### What is a Variable?
-
-A **variable** is a name that refers to a value stored in memory.
-
-```{python}
-x = 10
-y = 5
-x + y
-```
-
--   x is the variable name
--   = is the assignment operator
--   10 is the value stored in the variable
-
-Variables allow us to store, reuse, and manipulate data. Variable names should be descriptive and meaningful
-
-### Rules for Naming Variables
-
--   Must start with a letter or underscore (\_)
--   Cannot start with a number
--   Cannot contain spaces
--   Should be descriptive and meaningful
-
-**Valid variable names**
-
-```{python}
-age = 25
-total_sales = 5000
-```
-
-**Invalid variable names**
-
-```{python}
-2age = 25      # starts with a number
-total sales = 5000   # contains space
-```
-
-## Checking Data Types
-
-Python automatically determines the type of data stored in a variable.
-
-### Common data types:
-
--   **int** – whole numbers
--   **float** – decimal numbers
--   **str** – text
--   **bool** – True or False values
--   **List (list)** – ordered, changeable
-
-**1. Numeric data types**
-
-```{python}
-# - **Integer (int)** - Whole numbers (no decimals):
-age = 25
-participants = 120
-
-# Check type
-type(age)
-```
-
-**2. String assignment (text data)**
-
-```{python}
-
-course = "Statistics and Data Analysis"
-message = "Welcome to Python!"
-
-# Check Type
-type(course)
-
-```
-
-**3. Boolean assignment (True / False)**
-
-```{python}
-is_registered = True
-has_paid = False
-passed_exam = True
-
-# Check Type
-type(is_registered)
-```
-
-## Numeric Data Types
-
-Python supports several numeric types, but the most commonly used are integers and floats.
-
-### Integers (int)
-
-Integers are whole numbers without decimal points.
-
-```{python}
-a = 10
-b = -3
-```
-
-**Examples of integers:**
-
-Examples of integers:
-
--   Population counts
--   Number of observations
--   Age in completed years
-
-### Floating-Point Numbers (float)
-
-Floats are numbers with decimal points.
-
-```{python}
-height = 1.75
-temperature = 36.6
-```
-
-**Examples of floats:**
-
--   Measurements
--   Averages
--   Percentages
-
-## String Data Type (str)
-
-A string is a sequence of characters enclosed in:
-
--   Single quotes ' '
--   Double quotes " "
--   Triple quotes ''' ''' or """ """ (multi-line strings)
-
-**Key Points**
-
--   Strings are immutable (cannot be changed)
--   Supports indexing and slicing
--   Used to store text
-
-**Examples**
-
-```{python}
-name = "Python"
-language = 'Programming'
-
-print(name)
-print(type(name))
-
-```
 
 ## List Data Type (list)
 
@@ -1189,7 +1053,7 @@ In modern computing, ASCII is often extended to 8-bit encodings (like **UTF-8**)
 **Differences Between ASCII and UTF-8:**
 
 | Feature | ASCII | UTF-8 |
-|------------------|-------------------------|-----------------------------|
+|-------------------|-------------------------|-----------------------------|
 | **Character Range** | Limited to 128 characters (0–127) | Supports over 1.1 million characters |
 | **Encoding** | 7-bit encoding | Variable-length (1 to 4 bytes per character) |
 | **Compatibility** | Primarily used for English text | Compatible with ASCII and supports many languages |
@@ -1258,8 +1122,6 @@ print(numbers[-1])  # 40
 
 ```
 :::
-
-
 
 ::: callout-tip
 ## Important Notes on Indexing
@@ -1368,227 +1230,3 @@ print(data[::-1])   # [50, 40, 30, 20, 10]
 :::
 
 > Indexing gives one element, slicing gives many elements.
-::::::::
-
-## Basic operations
-
-Basic operations are the fundamental actions performed on data types such as numbers, strings, lists, sets, and dictionaries.
-
-### Arithmetic Operations
-
-Used with numeric types (`int`, `float`).
-
-| Operator | Meaning        | Example  |
-|----------|----------------|----------|
-| `+`      | Addition       | `5 + 2`  |
-| `-`      | Subtraction    | `5 - 2`  |
-| `*`      | Multiplication | `5 * 2`  |
-| `/`      | Division       | `5 / 2`  |
-| `//`     | Floor Division | `5 // 2` |
-| `%`      | Modulus        | `5 % 2`  |
-| `**`     | Exponent       | `5 ** 2` |
-
-**Examples**
-
-```{python}
-a = 10
-b = 3
-
-a + b    # 13
-a / b    # 3.3333
-a // b   # 3
-a % b    # 1
-a ** b   # 1000
-```
-
-### Comparison (Relational) Operations
-
-Used to compare values. Result is `True` or `False`.
-
-| Operator | Meaning          |
-|----------|------------------|
-| `==`     | Equal            |
-| `!=`     | Not equal        |
-| `>`      | Greater than     |
-| `<`      | Less than        |
-| `>=`     | Greater or equal |
-| `<=`     | Less or equal    |
-
-**Examples**
-
-```{python}
-5 == 5     # True
-10 > 3     # True
-7 != 2     # True
-```
-
-### Logical Operations
-
-Used with Boolean values.
-
-| Operator | Meaning              |
-|----------|----------------------|
-| `and`    | Both conditions true |
-| `or`     | At least one true    |
-| `not`    | Reverses condition   |
-
-**Examples**
-
-```{python}
-True and False   # False
-True or False    # True
-not True         # False
-
-## Example with conditions:
-
-age = 20
-age > 18 and age < 30   # True
-```
-
-### Assignment Operations
-
-Used to assign values.
-
-| Operator | Example  | Equivalent To |
-|----------|----------|---------------|
-| `=`      | `x = 5`  | Assign        |
-| `+=`     | `x += 2` | `x = x + 2`   |
-| `-=`     | `x -= 2` | `x = x - 2`   |
-| `*=`     | `x *= 2` | `x = x * 2`   |
-| `/=`     | `x /= 2` | `x = x / 2`   |
-
-**Example**
-
-```{python}
-x = 5
-x += 3   # 8
-```
-
-### Membership Operations
-
-Used to check if value exists in a sequence.
-
-| Operator | Meaning     |
-|----------|-------------|
-| `in`     | Present     |
-| `not in` | Not present |
-
-**Examples**
-
-```{python}
-3 in [1,2,3]          # True
-"a" in "apple"        # True
-5 not in [1,2,3]      # True
-```
-
-### Identity Operations
-
-Used to compare memory location.
-
-| Operator | Meaning          |
-|----------|------------------|
-| `is`     | Same object      |
-| `is not` | Different object |
-
-**Examples**
-
-```{python}
-a = [1,2]
-b = a
-c = [1,2]
-
-a is b    # True
-a is c    # False
-```
-
-### String Operations
-
-```{python}
-# 1. Concatenation
-
-"Hello" + " World"
-
-
-# 2. Repetition
-
-"Hi" * 3   # "HiHiHi"
-
-# Membership
-
-"e" in "hello"   # True
-
-```
-
-### List Operations
-
-```{python}
-# 1. Concatenation
-
-[1,2] + [3,4]
-
-# 2. Repetition
-
-[0] * 4
-
-# 3. Length
-
-len([1,2,3])   # 3
-
-```
-
-### Set Operations
-
-```{python}
-A = {1,2,3}
-B = {3,4,5}
-
-A | B   # Union
-A & B   # Intersection
-A - B   # Difference
-```
-
-### Dictionary Operations
-
-```{python}
-# 1. Access
-
-d = {"a":1}
-d["a"]
-
-# 2. Add/Update
-d["b"] = 2
-
-# 3. Membership (checks keys)
-
-"a" in d
-
-```
-
-### Built-in Functions Commonly Used
-
-| Function   | Meaning       |
-|------------|---------------|
-| `len()`    | Length        |
-| `type()`   | Data type     |
-| `sum()`    | Sum of values |
-| `min()`    | Minimum       |
-| `max()`    | Maximum       |
-| `sorted()` | Sort values   |
-
-**Examples**
-
-```{python}
-nums = [1,5,2]
-len(nums)
-sum(nums)
-sorted(nums)
-```
-
-### Conclusion
-
-Basic operations form the foundation of Python programming. Mastering them is essential before moving to:
-
--   Control flow (if, for, while)
--   Functions
--   Object-Oriented Programming
--   File handling

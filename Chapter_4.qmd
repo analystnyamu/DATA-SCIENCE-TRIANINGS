@@ -1,5 +1,5 @@
 ---
-title: "Lesson 4: Functions & Debugging"
+title: "Chapter 4: Functions & Debugging"
 editor: visual
 ---
 
@@ -10,24 +10,23 @@ Functions are reusable blocks of code that perform specific tasks. They help us 
 ::: callout-tip
 ## Learning Objectives
 
-- **Understand how to define and call functions with parameters and return values**  
-  Learn how to create functions that can accept input values (parameters) and return output values (return statements).
+-   **Understand how to define and call functions with parameters and return values**\
+    Learn how to create functions that can accept input values (parameters) and return output values (return statements).
 
-- **Learn to create reusable code blocks that accept inputs and produce outputs**  
-  Understand how functions can be used to organize and reuse code efficiently.
+-   **Learn to create reusable code blocks that accept inputs and produce outputs**\
+    Understand how functions can be used to organize and reuse code efficiently.
 
-- **Identify common programming errors and apply debugging techniques**  
-  Recognize and address common mistakes in programming, such as syntax errors, logical errors, and runtime errors, using debugging tools and techniques.
+-   **Identify common programming errors and apply debugging techniques**\
+    Recognize and address common mistakes in programming, such as syntax errors, logical errors, and runtime errors, using debugging tools and techniques.
 
-- **Implement error handling using try/except blocks to prevent crashes**  
-  Use try/except blocks to catch errors and handle them gracefully, preventing your program from crashing unexpectedly.
+-   **Implement error handling using try/except blocks to prevent crashes**\
+    Use try/except blocks to catch errors and handle them gracefully, preventing your program from crashing unexpectedly.
 
-- **Write modular, organized code by breaking problems into smaller functions**  
-  Learn to divide complex problems into smaller, manageable functions that can be independently tested and reused.
+-   **Write modular, organized code by breaking problems into smaller functions**\
+    Learn to divide complex problems into smaller, manageable functions that can be independently tested and reused.
 :::
 
-
-### Part 1: Defining Functions
+## Part 1: Defining Functions
 
 **What is a Function?**: A function is like a mini-program within your program. It takes inputs, performs actions, and optionally returns outputs.
 
@@ -45,11 +44,11 @@ def function_name(parameter1, parameter2):
 ::: callout-tip
 ## Function Components:
 
-- **`def` keyword**: Tells Python you're defining a function.
-- **Function name**: Should be descriptive (use lowercase with underscores). For example, `calculate_area` or `print_message`.
-- **Parentheses `()`**: Can contain parameters, which are the inputs the function will accept. If no parameters are needed, you can leave them empty.
-- **Colon `:`**: Marks the start of the function body, indicating that the following indented block contains the function's code.
-- **Indented block**: The code that runs when the function is called. Everything within the indentation after the colon is part of the function body and will execute.
+-   **`def` keyword**: Tells Python you're defining a function.
+-   **Function name**: Should be descriptive (use lowercase with underscores). For example, `calculate_area` or `print_message`.
+-   **Parentheses `()`**: Can contain parameters, which are the inputs the function will accept. If no parameters are needed, you can leave them empty.
+-   **Colon `:`**: Marks the start of the function body, indicating that the following indented block contains the function's code.
+-   **Indented block**: The code that runs when the function is called. Everything within the indentation after the colon is part of the function body and will execute.
 :::
 
 ::: {.callout-caution collapse="true"}
@@ -88,7 +87,6 @@ show_menu()
 ```
 :::
 
-
 **Example of Defining a Function**
 
 Here’s a simple function that takes two numbers as input and returns their sum:
@@ -99,9 +97,9 @@ def add_numbers(a, b):
     return result
 ```
 
-- `add_numbers` is the function name.
-- `a` and `b` are the parameters (input values).
-- The function calculates the sum of a and b and returns the result.
+-   `add_numbers` is the function name.
+-   `a` and `b` are the parameters (input values).
+-   The function calculates the sum of a and b and returns the result.
 
 **Calling a Function**
 
@@ -113,8 +111,7 @@ print(sum)  # Output: 8
 
 ```
 
-
-### Part 2: Function Arguments and Return Values
+## Part 2: Function Arguments and Return Values
 
 **Function Arguments**
 
@@ -133,13 +130,13 @@ def greet(name, age):
 greet("Alice", 25)  # Positional arguments
 ```
 
-- **ii) Keyword Arguments:** Allows you to specify which value goes to which parameter by name, making the order irrelevant.
+-   **ii) Keyword Arguments:** Allows you to specify which value goes to which parameter by name, making the order irrelevant.
 
 ```{python}
 greet(age=25, name="Alice")  # Keyword arguments
 ```
 
-- **iii) Default Arguments**: You can specify default values for parameters, so if the argument is not passed when calling the function, the default value is use
+-   **iii) Default Arguments**: You can specify default values for parameters, so if the argument is not passed when calling the function, the default value is use
 
 ```{python}
 def greet(name="Guest", age=30):
@@ -151,8 +148,8 @@ greet("Bob")  # Uses default age
 
 **iv) Variable-length Arguments**:
 
-- `*args` allows you to pass a variable number of positional arguments.
-- `**kwargs` allows you to pass a variable number of keyword arguments.
+-   `*args` allows you to pass a variable number of positional arguments.
+-   `**kwargs` allows you to pass a variable number of keyword arguments.
 
 **Example of `*args`:**
 
@@ -187,7 +184,7 @@ print(result)
 
 ```
 
-- If no return statement is present, the function returns None by default.
+-   If no return statement is present, the function returns None by default.
 
 ::: {.callout-caution collapse="true"}
 ## More examples using Return Values
@@ -239,8 +236,7 @@ print(divide_numbers(10, 0))   # Output: Error: Cannot divide by zero!
 ```
 :::
 
-
-::: {.callout-caution collapse="true"}
+::::: {.callout-caution collapse="true"}
 ## Practical Examples
 
 **Example 1: Temperature Converter**
@@ -299,7 +295,7 @@ print_grade_report("Bob", 82)      # Grade: B
 print_grade_report("Charlie", 58)  # Grade: F
 ```
 
-### Part 3: Basic Debugging and Error Handling
+## Part 3: Basic Debugging and Error Handling
 
 ::: callout-tip
 ## Types of Errors
@@ -440,17 +436,62 @@ def add_numbers(a, b):
 add_numbers(5, 3)
 ```
 
-
-
 **Using `pdb` for Debugging**
 
 When the program hits `pdb.set_trace()`, it pauses, allowing you to enter commands like:
 
-- `n` (next): Move to the next line of code.
-- `s` (step): Step into a function call.
-- `p` (print): Print the value of a variable or expression.
+-   `n` (next): Move to the next line of code.
+-   `s` (step): Step into a function call.
+-   `p` (print): Print the value of a variable or expression.
+:::
 
 
+
+::: callout-tip
+## Error Handling with Try/Except
+
+**Basic Try/Except**
+
+In Python, error handling helps prevent your program from crashing when something unexpected happens (like dividing by zero or entering text instead of a number). The `try / except` block allows your program to handle these errors gracefully.
+
+**Basic `try / except` Syntax**
+
+```{python}
+try:
+    # risky code
+except ErrorType:
+    # handle error
+else:
+    # runs if no error occurs
+finally:
+    # always runs
+```
+
+- **try block** → contains code that may produce an error.
+- **except block** → runs if an error occurs in the try block.
+- **else** → Runs if no error happens
+- **finally** → Always runs
+
+**Simple Example**
+
+```{python}
+try:
+    num = int(input("Enter a number: "))
+    result = 10 / num
+    print(result)
+except:
+    print("An error occurred.")
+```
+
+**What happens:**
+
+- If the user enters 0, division by zero occurs.
+- If the user enters text, conversion to integer fails.
+- Instead of crashing, the program prints "An error occurred."
+
+**Handling Specific Errors**
+
+- It is better to handle specific exceptions.
 
 ```{python}
 try:
@@ -464,21 +505,167 @@ finally:
     print("Execution finished.")
 ```
 
-
 Here:
 
-ValueError handles invalid input (e.g., if the user enters text instead of a number).
+- **ValueError** handles invalid input (e.g., if the user enters text instead of a number).
+- **ZeroDivisionError** handles division by zero.
+- **finally** always runs, whether or not an error occurred.
 
-ZeroDivisionError handles division by zero.
+:::
 
-finally always runs, whether or not an error occurred.
 
-Summary
+::: callout-tip
+## Summary
 
-Functions: Blocks of code designed to perform specific tasks. They help avoid redundancy and increase modularity. You can define functions with parameters and return values, allowing for flexible and reusable code.
+- **Functions:** Blocks of code designed to perform specific tasks. They help avoid redundancy and increase modularity. You can define functions with parameters and return values, allowing for flexible and reusable code.
+- **Function Arguments & Return Values**: Functions can accept input through arguments and provide output via return values. Arguments can be positional, keyword, or variable-length. Functions can return values to be used later in the program.
+- **Debugging**: Debugging helps you identify and fix errors in your program. You can use techniques like print statements, the built-in debugger (pdb), or your IDE's debugger to find and fix bugs.
+**Error Handling**: Using try and except blocks helps manage runtime errors gracefully, ensuring the program continues to run or provides useful error messages.
+:::
 
-Function Arguments & Return Values: Functions can accept input through arguments and provide output via return values. Arguments can be positional, keyword, or variable-length. Functions can return values to be used later in the program.
 
-Debugging: Debugging helps you identify and fix errors in your program. You can use techniques like print statements, the built-in debugger (pdb), or your IDE's debugger to find and fix bugs.
+## Part 4: Modular Programming
 
-Error Handling: Using try and except blocks helps manage runtime errors gracefully, ensuring the program continues to run or provides useful error messages.
+
+### 1. What is Modular Programming?
+
+**Modular programming** is a programming approach where a large program is divided into smaller parts called **modules** or **functions**.
+
+Each module:
+
+- Performs a **single specific task**
+- Can be **tested independently**
+- Can be **reused in other programs**
+
+### Concept Illustration
+
+Instead of writing everything in one long block of code, the program is divided into smaller logical parts.
+
+Big Problem
+     ↓
+Smaller Tasks
+     ↓
+Functions
+
+
+Each function handles a particular task, making the entire program easier to develop and manage.
+
+### 2. Why Break Problems into Smaller Functions?
+
+Breaking a problem into smaller functions provides several important advantages.
+
+**i) Improves Readability**:  Code becomes easier to read and understand. Each function has a **clear and specific purpose**, which helps programmers quickly identify what the code is doing.
+
+**ii) Easier Debugging**: When an error occurs, it is easier to locate the problem because:
+
+  - Each function performs a **small task**
+  - You only need to check a **specific section of the code**
+**iii) Reusability**: Functions can be reused in other programs. Instead of rewriting the same code many times, you can simply **call the existing function**.
+**iv) Easier Testing**: Each function can be tested separately to ensure it works correctly before integrating it into the main program.
+**v) Better Organization** Large programs become:
+
+- **Well structured**
+- **Easier to manage**
+- **Easier to maintain and update**
+
+::: callout-tip
+## Example: Non-Modular Code
+
+Below is an example of a program written **without functions**. All operations are written in one block of code.
+
+```{{python}
+# Program to calculate the total and average of three numbers
+
+num1 = 10
+num2 = 20
+num3 = 30
+
+total = num1 + num2 + num3
+average = total / 3
+
+print("Total:", total)
+print("Average:", average)
+```
+
+- This works, but everything is in one block, making it harder to manage if the program becomes bigger.
+:::
+
+::: callout-tip
+## Example: Modular Programming
+
+In modular programming, the program is divided into **separate functions**, where each function performs a specific task. This makes the program easier to understand, reuse, and maintain.
+
+```{python}
+# Function to calculate the total of three numbers
+def calculate_total(a, b, c):
+    total = a + b + c
+    return total
+
+# Function to calculate the average
+def calculate_average(total):
+    average = total / 3
+    return average
+
+# Main program
+num1 = 10
+num2 = 20
+num3 = 30
+
+total = calculate_total(num1, num2, num3)
+average = calculate_average(total)
+
+print("Total:", total)
+print("Average:", average)
+
+```
+
+:::
+
+
+::: callout-tip
+## Another Practical Example of Modular Programming
+
+Consider a simple program for a **student grading system**.  
+The program will:
+
+- Calculate the **total marks**
+- Calculate the **average score**
+- Determine the **grade**
+
+Instead of writing everything in one block, we divide the tasks into **separate functions**.
+
+```{python}
+# Function to calculate total marks
+def calculate_total(marks):
+    return sum(marks)
+
+# Function to calculate average marks
+def calculate_average(total, number_of_subjects):
+    return total / number_of_subjects
+
+# Function to determine grade
+def determine_grade(average):
+    if average >= 70:
+        return "A"
+    elif average >= 60:
+        return "B"
+    elif average >= 50:
+        return "C"
+    elif average >= 40:
+        return "D"
+    else:
+        return "F"
+
+# Main program
+marks = [75, 68, 80, 72, 60]
+
+total = calculate_total(marks)
+average = calculate_average(total, len(marks))
+grade = determine_grade(average)
+
+print("Total Marks:", total)
+print("Average Marks:", average)
+print("Grade:", grade)
+```
+:::
+

@@ -1,0 +1,164 @@
+---
+title: "Chapter 6: Working with Files & Simple Data Tasks"
+author: "Martin Nyamu"
+date: "2026-03-16"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+In many real-world applications, data is not entered directly into a program. Instead, it is stored in **files** such as CSV files, Excel spreadsheets, text files, or databases. Being able to read, write, and manage files is therefore an essential skill for anyone working with data.
+
+Python provides powerful tools for **reading, writing, and manipulating files**, making it widely used in data analysis, scientific computing, and automation tasks. Through file operations, programmers can load datasets, process them, analyze patterns, and save results for later use.
+
+In addition, understanding **file paths and directories** allows programmers to organize data and ensure that programs can locate the files they need. Once data is loaded into Python, simple techniques for **data exploration** help users understand the structure, size, and contents of the dataset before performing deeper analysis.
+
+This chapter introduces practical methods for working with files and performing basic data tasks in Python.
+
+::: callout-tip
+## Learning Objectives
+
+By the end of this chapter, learners should be able to:
+
+- Read data from **CSV files** using Python.
+- Write data to **CSV files**.
+- Load and manipulate **Excel files** in Python.
+- Understand and use **file paths and directories**.
+- Perform **basic data exploration** on datasets.
+- Inspect and summarize data before analysis.
+:::
+
+
+## Reading and Writing CSV Files
+
+### What is a CSV File?
+
+A **CSV (Comma-Separated Values)** file is a simple file format used to store tabular data. Each row represents a record, and columns are separated by commas.
+
+Example CSV file:
+
+Name,Age,Score
+Alice,20,85
+Brian,22,90
+Cathy,21,88
+
+CSV files are widely used because they are **simple, lightweight, and supported by many programs**, including spreadsheets and databases.
+
+### Reading a CSV File in Python
+
+Python can read CSV files using libraries such as **csv** or **pandas**. In data analysis, **pandas** is commonly used.
+
+**Reading CSV Files**
+
+- Using the csv module:
+
+```{python}
+import csv
+
+with open('data.csv', mode='r') as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+```
+
+::: callout-tip
+## Meaning of the CSV Module
+
+- **`import` csv**: This imports Python’s built-in csv module, which makes it easier to read and write CSV files.
+- **`open()`**:  opens the file `data.csv` in read mode ('r').
+- The **`with`** statement ensures the file is automatically closed after reading, which is good practice.
+- **reader =`csv.reader(file)`**:  returns an object that allows you to iterate over each row in the CSV.
+- The `loop` go through every row in the CSV and prints it.
+- Each row is a list of values corresponding to the CSV columns.
+
+**Problem: `FileNotFoundError`**
+
+- If your CSV is not in the same folder as your Python script, Python will throw:
+- **FileNotFoundErro**r: [Errno 2] No such file or directory: 'data.csv'
+- To fix this, you have two main options:
+
+**Option 1:** Change Directory in Python
+
+- You can tell Python to change its working directory using os.chdir():
+
+```{python}
+import os
+import csv
+
+# Change to the folder where your CSV is located
+os.chdir(r'C:\Users\YourName\Documents')  # Use raw string r'' for Windows paths
+
+with open('data.csv', mode='r') as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+```
+
+- **`os.chdir()`** temporarily changes the current working directory to the folder containing your CSV.
+- After this, Python can open 'data.csv' without specifying the full path.
+
+**Option 2:** Use the Full File Path
+
+- You can skip changing the directory and directly provide the full path:
+
+```{python}
+import csv
+
+with open(r'C:\Users\YourName\Documents\data.csv', mode='r') as file:
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+```
+
+- Again, the r'' makes it a raw string so backslashes in Windows paths are handled correctly.
+- On macOS or Linux, use forward slashes:
+
+**Extra Tip:** Check Current Working Directory
+
+- If you’re unsure where Python is looking:
+
+```{python}
+import os
+print(os.getcwd())
+```
+
+This prints the current working directory. Your file should be in this folder, or you need to change it as shown above.
+:::
+
+
+- Using pandas (recommended for data analysis):
+
+```{python}
+import pandas as pd
+
+df = pd.read_csv('data.csv')
+print(df.head())
+
+```
+
+**Writing CSV Files**
+
+- Using csv module:
+
+```{python}
+with open('output.csv', mode='w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(['Name', 'Age', 'City'])
+    writer.writerow(['Alice', 25, 'New York'])
+
+```
+
+- Using pandas:
+
+```{python}
+df.to_csv('output.csv', index=False)
+```
+
+**Key Points:**
+
+- Always check if the file exists to avoid overwriting data.
+- `pandas` provides more flexibility, e.g., handling headers, encoding, and missing values.

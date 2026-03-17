@@ -1053,7 +1053,7 @@ In modern computing, ASCII is often extended to 8-bit encodings (like **UTF-8**)
 **Differences Between ASCII and UTF-8:**
 
 | Feature | ASCII | UTF-8 |
-|-------------------|-------------------------|-----------------------------|
+|-------------------|-------------------------|----------------------------|
 | **Character Range** | Limited to 128 characters (0–127) | Supports over 1.1 million characters |
 | **Encoding** | 7-bit encoding | Variable-length (1 to 4 bytes per character) |
 | **Compatibility** | Primarily used for English text | Compatible with ASCII and supports many languages |
